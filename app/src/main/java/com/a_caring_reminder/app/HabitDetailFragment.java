@@ -66,7 +66,7 @@ public class HabitDetailFragment extends Fragment {
             mTime = query.getHabitTime(getArguments().getString(ARG_HABIT_ID));
             mRecurrence = query.getHabitRecurrenceDetails(getArguments().getString(ARG_HABIT_ID));
 
-            getActivity().setTitle(query.getHabitTitle(getArguments().getString(ARG_HABIT_ID)) + " Habit Details");
+            getActivity().setTitle(query.getHabitTitle(getArguments().getString(ARG_HABIT_ID)));
 
 
         }

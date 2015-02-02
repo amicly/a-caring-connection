@@ -2,8 +2,8 @@
 <resources>
 
     <!-- App strings -->
-    <string name="app_name">A Caring Reminder</string>
-    <string name="title_habit_detail">habit Detail</string>
+    <string name="app_name">A Caring Connection</string>
+    <string name="title_habit_detail">Enter Habit Details</string>
     <string name="title_save">Save</string>
     <string name="title_cancel">Cancel</string>
     <string name="send_feedback">Send Feedback (placeholder)</string>
