@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeightLarge"
+    android:padding="6dp"
+    >
+
+    <ImageView
+        android:id="@+id/icon_supporter"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
+
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        style="@style/DetailsStyle"
+        android:id="@+id/supporterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_gravity="center_vertical"
+        android:layout_toRightOf="@id/icon_supporter"
+        android:background="#FF0000"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:text="Joe Smith"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heart_icon"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/common_signin_btn_icon_light"
+
+        />
+
+</RelativeLayout><!-- From: file:/home/daz/source/a-caring-reminder/app/src/main/res/layout/manage_group_rows.xml -->

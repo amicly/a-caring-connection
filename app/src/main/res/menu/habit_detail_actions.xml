@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/habit_details_edit_action"
+        android:icon="@drawable/ic_action_edit"
+        android:title="@string/habit_detail_edit"
+        android:showAsAction="always"
+        />
+
+    <item android:id="@+id/habit_details_save"
+        android:title="@string/title_save"
+        android:icon="@drawable/ic_action_accept"
+        android:showAsAction="always"
+        />
+    <!--
+    <item android:id="@+id/habit_details_cancel"
+        android:title="@string/title_cancel"
+        android:icon="@drawable/ic_action_cancel"
+        android:showAsAction="ifRoom"
+        />
+
+     -->
+    <item android:id="@+id/habit_details_delete"
+        android:title="@string/title_delete"
+        android:icon="@drawable/ic_action_discard"
+        android:showAsAction="ifRoom"
+        />
+
+
+</menu>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/invite_heading"
+        android:typeface="sans"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:textSize="20sp"
+        android:padding="60dp"/>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+
+    >
+    <EditText
+        android:layout_margin="0dp"
+        android:id="@+id/inviteSupportEmail"
+        android:typeface="sans"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/hint_add_email"
+        android:layout_alignTop="@+id/inviteSuppButton"
+        android:layout_alignBottom="@+id/inviteSuppButton"
+        />
+    <Button
+        android:id="@+id/inviteSuppButton"
+        android:typeface="sans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="16sp"
+        android:text="@string/invite_prompt"/>
+</RelativeLayout>
+    <ListView
+        android:padding="20dp"
+        android:id="@+id/listViewManageGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        </ListView>
+</LinearLayout>

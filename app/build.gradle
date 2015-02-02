@@ -1,0 +1,48 @@
+apply plugin: 'android'
+
+android {
+    signingConfigs {
+        acaringreleasekey {
+            keyAlias 'a_caring_reminder_key'
+            keyPassword 'remindmetocare'
+            storeFile file('Home/a_caring_reminder_key.keystore')
+            storePassword 'remindmetocare'
+        }
+    }
+    compileSdkVersion 21
+    buildToolsVersion '21.1.01'
+    defaultConfig {
+        applicationId "com.a_caring_reminder.app"
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+        testApplicationId "com.a_caring_reminder.app.tests"
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+        testHandleProfiling true
+        testFunctionalTest true
+    }
+    buildTypes {
+        release {
+
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/instrumentTest/java/']
+        }
+    }
+    lintOptions {
+          abortOnError false
+      }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.+'
+    compile 'com.android.support:support-v4:21.0.3'
+    androidTestCompile files('src/androidTest/libs/espresso-1.1-bundled.jar')
+    compile 'com.google.android.gms:play-services:+'
+    compile 'com.google.code.gson:gson:2.2.+'
+    compile 'com.melnykov:floatingactionbutton:1.1.0'
+}

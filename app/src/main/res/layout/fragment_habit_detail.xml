@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="16sp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Habit Details"
+        android:id="@+id/textViewHabitDetailsHeader"
+        android:paddingLeft="16dp"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:paddingTop="16dp"
+        android:minHeight="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Habit Title"
+        android:id="@+id/habit_title"
+        android:padding="16dp"
+        />
+
+        <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/edit_text_habit_title"
+            style="@style/DetailsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".habitDetailFragment"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:layout_gravity="center_horizontal"
+            android:focusable="false"
+            android:enabled="false"
+            android:hint="Enter Habit Title"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Habit Description"
+        android:id="@+id/habit_description_title"
+        android:padding="16dp"
+        />
+
+    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/edit_text_habit_description"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        tools:context=".habitDetailFragment"
+        android:inputType="textCapSentences|textAutoCorrect"
+        android:textSize="16sp"
+        android:focusable="false"
+        android:hint="Enter Habit Description"
+        android:enabled="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Schedule Details"
+        android:id="@+id/textViewScheduleDetailsHeader"
+        android:paddingLeft="16dp"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:paddingTop="16dp"
+        android:minHeight="20dp"
+        android:enabled="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Habit Time"
+        android:id="@+id/habit_time_title"
+        android:padding="16dp"
+        />
+
+    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_view_habit_time"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    tools:context=".habitDetailFragment"
+    android:onClick="showTimePickerDialog"
+        android:clickable="false"
+        android:editable="false"
+        android:focusableInTouchMode="false"
+        android:layout_gravity="center_horizontal"
+        android:focusable="false"
+        android:enabled="false"
+        android:textSize="16sp" />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:text="Habit Date"
+    android:id="@+id/habit_date_title"
+    android:padding="16dp"
+    />
+
+    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/text_view_habit_date"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:textSize="16sp"
+        tools:context=".habitDetailFragment"
+        android:layout_gravity="center_horizontal"
+        android:editable="false"
+        android:clickable="false"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:focusable="false"
+        android:text="01/23/2014"
+        android:enabled="false"
+
+        android:onClick="showDatePickerDialog"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Frequency"
+        android:padding="16dp"
+        android:id="@+id/habit_recurrence_title"
+        />
+
+   <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/edit_habit_recurrence"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+
+       tools:context=".habitDetailFragment"
+       android:textAppearance="?android:attr/textAppearanceSmall"
+       android:layout_gravity="center_horizontal"
+       android:textSize="16sp"
+       android:text="Daily"
+       android:focusable="false"
+       android:editable="false"
+       android:clickable="false"
+       android:enabled="false"
+
+       android:paddingBottom="16dp"
+       android:onClick="showFrequencyPickerDialog"
+       />
+
+
+
+</LinearLayout>
+
+
+</ScrollView>
+
+
+

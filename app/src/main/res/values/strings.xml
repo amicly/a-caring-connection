@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App strings -->
+    <string name="app_name">A Caring Reminder</string>
+    <string name="title_habit_detail">habit Detail</string>
+    <string name="title_save">Save</string>
+    <string name="title_cancel">Cancel</string>
+    <string name="send_feedback">Send Feedback (placeholder)</string>
+    <string name="refresh">Refresh (placeholder) </string>
+    <string name="habits">Habits</string>
+    <string name="messages">Messages</string>
+    <string name="new_message">New Message</string>
+    <string name="habit_detail_edit">Edit Habit</string>
+    <string name="habit_add">Add Habit</string>
+    <string name="message_add">Support somebody</string>
+    <string name="postCreate">http://a-caring-reminder.herokuapp.com/create</string>
+    <string name="postMessage">http://a-caring-reminder.herokuapp.com/message</string>
+
+
+    <!-- Prompt strings -->
+    <string name="frequency_prompt">Choose frequency</string>
+    <string name="title_activity_message_list">Message List</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="schedule">Schedule</string>
+    <string name="recurrence_button">Recurrence</string>
+    <string name="title_delete">Delete</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_habit_frequency">Choose Habit Frequency</string>
+    <string name="invite_prompt">Invite</string>
+    <string name="message_prompt">Create Message</string>
+
+    <!-- Invite-Specific Strings -->
+    <string name="invite_action_bar_title">Supporters</string>
+    <string name="invite_heading">Invite Support</string>
+    <string name="invite_button_done">Done</string>
+    <string name="invite_supporter_icon">Supporter Icon</string>
+
+
+
+    <string-array name="frequency">
+        <item>One-time Event</item>
+        <item>Hourly</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+
+    </string-array>
+
+    <string name="title_activity_alarm_manager_broadcast_receiver">AlarmReceiver</string>
+
+    <!-- Hint strings -->
+    <string name="hint_add_supp_msg">Add Support Message Here</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_add_email">Enter E-mail Here</string>
+
+    <string name="reminders_tab">Reminders</string>
+    <string name="message_list_tab">Messages</string>
+    <string name="send_messages_tab">Send Messages</string>
+
+
+</resources>
