@@ -33,11 +33,7 @@ public class AcrDB extends SQLiteOpenHelper {
             db.execSQL("CREATE TABLE Message " +
                     "(id	int, " +
                     "message    text)");
-            db.execSQL("Insert Into Message (id, message) values('0', 'Please remember your meds')");
-            db.execSQL("Insert Into Message (id, message) values('1', 'Take your meds sweetheart')");
-            db.execSQL("Insert Into Message (id, message) values('2', 'You got this')");
-            db.execSQL("Insert Into Message (id, message) values('3', 'Love you honey bunny')");
-            db.execSQL("Insert Into Message (id, message) values('4', 'You be awesome!')");
+
 
             //
             // creating users table
@@ -47,7 +43,7 @@ public class AcrDB extends SQLiteOpenHelper {
                     "reg_id_str	text, " +
                     "email    text, " +
                     "message    text)");
-            db.execSQL("Insert Into SupportedUsers (id, reg_id_str, email, message) values('0', 'asdklajsdlks', 'test@test.com' , 'Hugs and Kisses!')");
+
 
 
 
@@ -55,12 +51,7 @@ public class AcrDB extends SQLiteOpenHelper {
                     "(id int, " +
                     "descriptions 	text, " +
                     "title text)");
-            db.execSQL("Insert Into Habit (id, title, descriptions) values('1', 'Morning routine', 'aspirin and coffee')");
-            db.execSQL("Insert Into Habit (id, title, descriptions) values('2', 'Afternoon routine', 'aspirin and beer')");
-            db.execSQL("Insert Into Habit (id, title, descriptions) values('3', 'Please wake up', 'Get out of bed and have a great day!')");
-            db.execSQL("Insert Into Habit (id, title, descriptions) values('4', 'Time to go to bed', 'Get some rest and have a great day tomorrow!')");
-            db.execSQL("Insert Into Habit (id, title, descriptions) values('5', 'Eat lunch', 'Time to eat something so you can be healthy')");
-            db.execSQL("Insert Into Habit (id, title, descriptions) values('6', 'Breakfast', 'The most important meal of the day!')");
+
 
             db.execSQL("CREATE TABLE Schedule " +
                     "(id int, " +
@@ -69,12 +60,7 @@ public class AcrDB extends SQLiteOpenHelper {
                     "day_of_week text, " +
                     "repeating		text, " +
                     "recurrence text)");
-            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('1', '1', '07:00', '06/14/2014', 'yes', 'Daily')");
-            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('2', '2', '16:00', '06/14/2014', 'yes', 'Daily')");
-            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('3', '3', '08:12', '06/15/2014', 'yes', 'Daily')");
-            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('4', '4', '08:30', '06/15/2014', 'yes', 'Daily')");
-            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('5', '5', '12:12', '06/15/2014', 'yes', 'Daily')");
-            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('6', '6', '07:07', '06/15/2014', 'yes', 'Daily')");
+
 
             db.execSQL("CREATE TABLE ScheduledAlarms " +
                     "(id int, " +
@@ -82,6 +68,40 @@ public class AcrDB extends SQLiteOpenHelper {
                     "message_id int, " +
                     "time_of_day text, " +
                     "date string)");
+
+
+            /* Create Sample Data /*
+
+            db.execSQL("Insert Into Message (id, message) values('0', 'Please remember your meds')");
+            db.execSQL("Insert Into Message (id, message) values('1', 'Take your meds sweetheart')");
+            db.execSQL("Insert Into Message (id, message) values('2', 'You got this')");
+            db.execSQL("Insert Into Message (id, message) values('3', 'Love you honey bunny')");
+            db.execSQL("Insert Into Message (id, message) values('4', 'You be awesome!')");
+
+
+
+
+            db.execSQL("Insert Into SupportedUsers (id, reg_id_str, email, message) values('0', 'asdklajsdlks', 'test@test.com' , 'Hugs and Kisses!')");
+
+
+
+            db.execSQL("Insert Into Habit (id, title, descriptions) values('1', 'Morning routine', 'aspirin and coffee')");
+            db.execSQL("Insert Into Habit (id, title, descriptions) values('2', 'Afternoon routine', 'aspirin and beer')");
+            db.execSQL("Insert Into Habit (id, title, descriptions) values('3', 'Please wake up', 'Get out of bed and have a great day!')");
+            db.execSQL("Insert Into Habit (id, title, descriptions) values('4', 'Time to go to bed', 'Get some rest and have a great day tomorrow!')");
+            db.execSQL("Insert Into Habit (id, title, descriptions) values('5', 'Eat lunch', 'Time to eat something so you can be healthy')");
+            db.execSQL("Insert Into Habit (id, title, descriptions) values('6', 'Breakfast', 'The most important meal of the day!')");
+
+
+
+            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('1', '1', '07:00', '06/14/2014', 'yes', 'Daily')");
+            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('2', '2', '16:00', '06/14/2014', 'yes', 'Daily')");
+            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('3', '3', '08:12', '06/15/2014', 'yes', 'Daily')");
+            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('4', '4', '08:30', '06/15/2014', 'yes', 'Daily')");
+            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('5', '5', '12:12', '06/15/2014', 'yes', 'Daily')");
+            db.execSQL("Insert Into Schedule (id, habit_id, time_of_day, day_of_week, repeating, recurrence) values('6', '6', '07:07', '06/15/2014', 'yes', 'Daily')");
+
+             */
 
 
         }

@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <permission android:name="com.a_caring_reminder.app.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
@@ -16,7 +18,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/acc_heart"
         android:label="@string/app_name"
         android:theme="@style/android:Theme.Holo.Light">
 
@@ -68,7 +70,7 @@
             android:parentActivityName=".createAMessage.SupportedListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".createAMessage.supportedListActivity" />
+                android:value=".createAMessage.SupportedListActivity" />
         </activity>
         <activity
             android:name=".HabitDetailActivity"
@@ -76,7 +78,7 @@
             android:parentActivityName=".HabitListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".habitListActivity" />
+                android:value=".HabitListActivity" />
         </activity>
 
         <!--KEEP THE LINE BELOW: android:windowSoftInputMode="adjustPan"-->
@@ -92,7 +94,7 @@
         </activity>
 
         <receiver
-            android:name=".AlarmReceiver"
+            android:name=".connection_management.AlarmReceiver"
             android:label="@string/title_activity_alarm_manager_broadcast_receiver" >
         </receiver>
 

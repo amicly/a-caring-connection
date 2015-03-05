@@ -10,7 +10,7 @@ android {
         }
     }
     compileSdkVersion 21
-    buildToolsVersion '21.1.01'
+    buildToolsVersion '21.1.2'
     defaultConfig {
         applicationId "com.a_caring_reminder.app"
         minSdkVersion 16

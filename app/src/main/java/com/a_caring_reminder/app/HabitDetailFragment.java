@@ -72,10 +72,6 @@ public class HabitDetailFragment extends Fragment {
         }
 
 
-
-
-
-
     }
 
     @Override

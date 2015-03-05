@@ -1,18 +1,17 @@
 package com.a_caring_reminder.app;
 
+import android.app.Activity;
 import android.app.AlarmManager;
-
 import android.app.DialogFragment;
-
 import android.app.PendingIntent;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
-import android.app.Activity;
-
+import android.provider.ContactsContract;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -21,15 +20,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
-
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.a_caring_reminder.app.connection_management.AlarmReceiver;
 import com.a_caring_reminder.app.models.ScheduledAlarm;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -52,6 +51,7 @@ public class HabitDetailActivity extends Activity {
     private boolean editMode = true;
     public static final String ALARM_ID = "alarm_id";
     public static final String HABIT_ID = "habit_title";
+    private EditText mContactName;
     private EditText mHabitTime;
     private EditText mHabitDate;
     private EditText mHabitTitle;
@@ -61,6 +61,7 @@ public class HabitDetailActivity extends Activity {
     private ArrayList<View> mTextViews = new ArrayList<View>();
     private ArrayList<View> mPickerViews = new ArrayList<View>();
     private String habitMode = "add";
+    private static final int CONTACT_PICKER_RESULT = 1001;
 
 
     public String TAG = "ACR";
@@ -249,6 +250,46 @@ public class HabitDetailActivity extends Activity {
         newFragment.setArguments(arguments);
         newFragment.show(getFragmentManager(), "datePicker");
     }
+
+    public void showContactPicker(View v) {
+
+        Log.i(TAG, "Attempting to launch Contact Picker");
+
+        Intent contactPickerIntent = new Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
+        startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
+
+
+
+
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (data == null) {return;};
+
+        String contactPhoneNumber = null;
+
+        
+
+        Uri result = data.getData();
+        String resultString = data.getDataString();
+        String id = result.getLastPathSegment();
+
+        Cursor cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,
+                ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ? AND " + ContactsContract.CommonDataKinds.Phone.TYPE + " = ? ",
+                new String[] { id, String.valueOf(ContactsContract.CommonDataKinds.Phone.TYPE_WORK) }, null);
+
+        Integer phoneIdx = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+
+        if (cursor.moveToFirst())
+        {
+            contactPhoneNumber = cursor.getString(phoneIdx);
+        }
+
+        TextView contactTextView = (TextView) findViewById(R.id.edit_text_contact_title);
+        contactTextView.setText(resultString);
+    }
+
 
     public void showFrequencyPickerDialog(View v) {
 
@@ -505,7 +546,7 @@ public class HabitDetailActivity extends Activity {
 
         //Set private variables to access views
 
-
+        mContactName = (EditText) findViewById(R.id.edit_text_contact_title);
         mHabitTitle = (EditText) findViewById(R.id.edit_text_habit_title);
         mHabitDescription = (EditText) findViewById(R.id.edit_text_habit_description);
         mHabitTime = (EditText) findViewById(R.id.text_view_habit_time);
@@ -515,6 +556,7 @@ public class HabitDetailActivity extends Activity {
 
         //Loading views into arrays to make enabled and disabling editing easier
 
+        mTextViews.add(mContactName);
         mTextViews.add(mHabitTitle);
         mTextViews.add(mHabitDescription);
         mPickerViews.add(mHabitTime);
