@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ExpandableListView;
 
 import com.a_caring_reminder.app.createAMessage.SupportedListActivity;
+import com.a_caring_reminder.app.data.AcrDB;
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.supportMessages.SupportMessagesActivity;
 
 import java.util.List;

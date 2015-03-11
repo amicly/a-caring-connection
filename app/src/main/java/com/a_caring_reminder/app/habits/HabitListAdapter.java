@@ -5,11 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import com.a_caring_reminder.app.AcrQuery;
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.HabitListActivity;
 import com.a_caring_reminder.app.R;
 import com.a_caring_reminder.app.models.ScheduleItems;

@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.a_caring_reminder.app.AcrDB;
-import com.a_caring_reminder.app.AcrQuery;
+import com.a_caring_reminder.app.data.AcrDB;
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.R;
 
 /**

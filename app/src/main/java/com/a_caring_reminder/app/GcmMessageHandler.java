@@ -13,6 +13,8 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.a_caring_reminder.app.data.AcrDB;
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.models.ReceivedMessage;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 

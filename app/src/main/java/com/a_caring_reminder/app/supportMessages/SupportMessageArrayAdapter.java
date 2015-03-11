@@ -12,8 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.a_caring_reminder.app.R;
-import com.a_caring_reminder.app.AcrDB;
-import com.a_caring_reminder.app.AcrQuery;
+import com.a_caring_reminder.app.data.AcrDB;
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.models.SupportMessage;
 
 import java.util.HashMap;

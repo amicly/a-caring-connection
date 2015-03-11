@@ -11,8 +11,8 @@ import android.support.v4.app.TaskStackBuilder;
 import android.telephony.SmsManager;
 import android.util.Log;
 
-import com.a_caring_reminder.app.AcrDB;
-import com.a_caring_reminder.app.AcrQuery;
+import com.a_caring_reminder.app.data.AcrDB;
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.HabitListActivity;
 import com.a_caring_reminder.app.R;
 import com.a_caring_reminder.app.models.ScheduledAlarm;
@@ -50,17 +50,23 @@ public class AlarmReceiver extends BroadcastReceiver {
         Log.i("ACR", "Scheduled Alarm ID is "+ String.valueOf(mScheduledAlarmID));
         ScheduledAlarm mScheduledAlarm = query.getScheduledAlarm(String.valueOf(mScheduledAlarmID));
         Log.i("ACR", "The Habit ID for the alarm is  " + String.valueOf(mScheduledAlarm.getHabitID()));
-        String habitTitle = query.getHabitTime(String.valueOf(mScheduledAlarm.getHabitID())) + " "  + query.getHabitTitle(String.valueOf(mScheduledAlarm.getHabitID()));
-        Log.i("ACR", "Setting Habit Title as " + habitTitle);
+        //String habitTitle = query.getHabitTime(String.valueOf(mScheduledAlarm.getHabitID())) + " "  + query.getHabitTitle(String.valueOf(mScheduledAlarm.getHabitID()));
+
+        String habitNotificationTitle = "Sending message to Darran";
+
+        Log.i("ACR", "Setting Habit Title as " + habitNotificationTitle);
         String messageText = query.getSupportMessageDetail(String.valueOf(query.getRandomSupportMessageID()));
+
+        String habitNotificationText = "Time: " + query.getHabitTime(String.valueOf(mScheduledAlarm.getHabitID())) + " Subject: " + query.getHabitDetail(String.valueOf(mScheduledAlarm.getHabitID()));
         Log.i("ACR", "Setting Message Text as " + messageText);
 
 
+
+
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.ic_action_warning)
-                .setContentTitle(habitTitle)
+                .setSmallIcon(R.drawable.acc_heart)
+                .setContentTitle(habitNotificationTitle)
                 .setContentText(messageText)
-                .setSound(soundURI)
                 .setVibrate(mVibratePattern);
 
 
@@ -69,13 +75,15 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(NOTIFICATION_ID, mBuilder.build());
 
+
+
         Log.i(LOG_TAG, "Sending SMS for reminder");
 
         SmsManager smsManager = SmsManager.getDefault();
 
         Log.i(LOG_TAG, "Sending SMS message to 512-693-7499");
 
-        smsManager.sendTextMessage("+15126937499", null, "Hi! " + habitTitle, null, null);
+        smsManager.sendTextMessage("+15126937499", null, "Hi! " + habitNotificationText, null, null);
 
 
 

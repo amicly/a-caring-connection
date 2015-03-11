@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.models.ScheduleItems;
 
 import java.util.List;

@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.a_caring_reminder.app.data.AcrDB;
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.habits.HabitListAdapter;
 import com.a_caring_reminder.app.models.ScheduleItems;
 import com.melnykov.fab.FloatingActionButton;
@@ -31,7 +33,7 @@ public class HabitListFragment extends ListFragment {
 
 
     //SQLite class
-    AcrDB AcrDB;
+    com.a_caring_reminder.app.data.AcrDB AcrDB;
 
     //listItem type in models for listview
     private List<ScheduleItems> ITEMS;

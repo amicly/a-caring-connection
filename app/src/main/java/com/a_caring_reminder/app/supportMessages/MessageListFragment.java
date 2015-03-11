@@ -2,7 +2,6 @@ package com.a_caring_reminder.app.supportMessages;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.os.Message;
 import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
@@ -11,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.a_caring_reminder.app.R;
-import com.a_caring_reminder.app.AcrDB;
-import com.a_caring_reminder.app.AcrQuery;
+import com.a_caring_reminder.app.data.AcrDB;
+import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.models.SupportMessage;
 
 import java.util.List;
