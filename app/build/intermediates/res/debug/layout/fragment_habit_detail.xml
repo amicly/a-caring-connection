@@ -51,6 +51,32 @@
 
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Contact Number"
+            android:id="@+id/contact_number_title"
+            android:padding="16dp"
+            />
+
+        <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/edit_text_contact_number"
+            style="@style/DetailsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".habitDetailFragment"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:layout_gravity="center_horizontal"
+            android:focusable="false"
+            android:enabled="false"
+            android:hint="Select Contact Above"
+
+            />
+
+
+
 
     <TextView
         android:layout_width="wrap_content"

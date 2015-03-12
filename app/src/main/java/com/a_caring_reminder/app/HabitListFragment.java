@@ -104,6 +104,9 @@ public class HabitListFragment extends ListFragment {
                 ITEMS.clear();
             }
 
+            //if (!(ITEMS.get(0).getText().equals("No Items Yet")))
+            // {
+
             ITEMS = query.getHabitList();
             adapter = new HabitListAdapter(
                     getActivity(),
@@ -111,6 +114,8 @@ public class HabitListFragment extends ListFragment {
 
 
                 setListAdapter(adapter);
+
+            //}
 
 
         } catch (Exception ex) {

@@ -3,6 +3,7 @@ package com.a_caring_reminder.app;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.DialogFragment;
+import android.app.Fragment;
 import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,7 +12,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.provider.ContactsContract;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
@@ -24,7 +24,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.a_caring_reminder.app.connection_management.AlarmReceiver;
 import com.a_caring_reminder.app.data.AcrDB;
@@ -48,7 +47,7 @@ import java.util.TimeZone;
  * in two-pane mode (on tablets) or a {@link HabitDetailActivity}
  * on handsets.
  */
-public class HabitDetailFragment extends Fragment {
+public class HabitDetailFragment extends Fragment implements View.OnClickListener {
 
 
 
@@ -57,11 +56,13 @@ public class HabitDetailFragment extends Fragment {
     public static final String ALARM_ID = "alarm_id";
     public static final String HABIT_ID = "habit_title";
     private EditText mContactName;
+    private EditText mContactNumber;
     private EditText mHabitTime;
     private EditText mHabitDate;
     private EditText mHabitTitle;
     private EditText mHabitDescription;
     private EditText mHabitFrequency;
+
     private int mHabitID;
     private ArrayList<View> mTextViews = new ArrayList<View>();
     private ArrayList<View> mPickerViews = new ArrayList<View>();
@@ -99,6 +100,8 @@ public class HabitDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setHasOptionsMenu(true);
 
         //Create the database here so that it gets the Activity Context.
         acrDB = new AcrDB(getActivity());
@@ -139,6 +142,22 @@ public class HabitDetailFragment extends Fragment {
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_habit_detail, container, false);
 
+        mContactName = (EditText) rootView.findViewById(R.id.edit_text_contact_title);
+        mContactNumber = (EditText) rootView.findViewById(R.id.edit_text_contact_number);
+        mHabitTime = (EditText) rootView.findViewById(R.id.text_view_habit_time);
+        mHabitDate = (EditText) rootView.findViewById(R.id.text_view_habit_date);
+        mHabitFrequency = (EditText) rootView.findViewById(R.id.edit_habit_recurrence);
+
+
+        mContactName.setOnClickListener(this);
+        mHabitTime.setOnClickListener(this);
+        mHabitDate.setOnClickListener(this);
+        mHabitFrequency.setOnClickListener(this);
+
+
+
+
+
         // Show the content as text in a TextView.
         if (mItem != null) {
 
@@ -161,6 +180,40 @@ public class HabitDetailFragment extends Fragment {
         }
 
         return rootView;
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.edit_text_contact_title:
+
+                showContactPicker(v);
+
+                break;
+
+            case R.id.text_view_habit_time:
+
+                showTimePickerDialog(v);
+
+                break;
+
+            case R.id.text_view_habit_date:
+
+                showDatePickerDialog(v);
+
+                break;
+
+            case R.id.edit_habit_recurrence:
+
+                showFrequencyPickerDialog(v);
+
+                break;
+
+
+
+
+        }
     }
 
     @Override
@@ -324,15 +377,44 @@ public class HabitDetailFragment extends Fragment {
                     Cursor c =  getActivity().getContentResolver().query(contactData, null, null, null, null);
                     if (c.moveToFirst()) {
                         String name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+                        String contactID =  c.getString(c.getColumnIndex(ContactsContract.Contacts._ID));
+                        String contactNumber = null;
+
+
+                        Cursor cursorPhone = getActivity().getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                                new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER},
+
+                                ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ? AND " +
+                                        ContactsContract.CommonDataKinds.Phone.TYPE + " = " +
+                                        ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE,
+
+                                new String[]{contactID},
+                                null);
+
+                        if (cursorPhone.moveToFirst()) {
+                            contactNumber = cursorPhone.getString(cursorPhone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                        } else {
+
+                            contactNumber = "No Phone Number for Contact";
+                        }
+
+                        cursorPhone.close();
 
 
                         TextView contactTextView = (TextView) getActivity().findViewById(R.id.edit_text_contact_title);
                         contactTextView.setText(name);
+                        mContactNumber.setText(contactNumber);
+
+
                     }
                 }
                 break;
         }
+
+
+
     }
+
 
 
 
