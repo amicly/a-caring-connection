@@ -154,6 +154,19 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
         mHabitDate.setOnClickListener(this);
         mHabitFrequency.setOnClickListener(this);
 
+        mContactName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+
+                if (hasFocus) {
+
+                    showContactPicker(v);
+
+
+                }
+            }
+        });
+
 
 
 
@@ -717,6 +730,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
                 v.setFocusable(true);
                 v.setFocusableInTouchMode(true);
                 v.setEnabled(true);
+
             }
 
             for (View v : mPickerViews) {
