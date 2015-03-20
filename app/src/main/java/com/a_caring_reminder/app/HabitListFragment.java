@@ -13,7 +13,7 @@ import android.widget.ListView;
 import com.a_caring_reminder.app.data.AcrDB;
 import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.habits.HabitListAdapter;
-import com.a_caring_reminder.app.models.ScheduleItems;
+import com.a_caring_reminder.app.models.Reminder;
 import com.melnykov.fab.FloatingActionButton;
 
 import java.util.List;
@@ -36,7 +36,7 @@ public class HabitListFragment extends ListFragment {
     com.a_caring_reminder.app.data.AcrDB AcrDB;
 
     //listItem type in models for listview
-    private List<ScheduleItems> ITEMS;
+    private List<Reminder> ITEMS;
     private HabitListAdapter adapter;
     private View rootView;
     private ListView listView;
@@ -107,7 +107,7 @@ public class HabitListFragment extends ListFragment {
             //if (!(ITEMS.get(0).getText().equals("No Items Yet")))
             // {
 
-            ITEMS = query.getHabitList();
+            ITEMS = query.remindersToList(AcrDB);
             adapter = new HabitListAdapter(
                     getActivity(),
                     ITEMS);

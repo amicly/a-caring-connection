@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.a_caring_reminder.app.models.ReceivedMessage;
+import com.a_caring_reminder.app.models.Reminder;
 import com.a_caring_reminder.app.models.ScheduleItems;
 import com.a_caring_reminder.app.models.ScheduledAlarm;
 import com.a_caring_reminder.app.models.SupportMessage;
@@ -28,6 +29,7 @@ public class AcrQuery {
      * Class created to store query methods for a_caring_reminder
      */
     private final AcrDB acrDB;
+    private final String LOG_TAG = getClass().getSimpleName();
 
     public AcrQuery(AcrDB acrDB){
         this.acrDB = acrDB;
@@ -691,7 +693,7 @@ public class AcrQuery {
             return (int) sqLiteDatabase.insert("Schedule", "1", values);
         }
         catch (Exception ex){
-            Log.d("Exception when executing updateHabitDetails", ex.getMessage());
+            Log.d(LOG_TAG, ex.getMessage());
             return -1;
         }
 
@@ -820,9 +822,121 @@ public class AcrQuery {
             return sqLiteDatabase.update("SupportedUsers", values, "id =?", new String[]{String.valueOf(anID)});
         }
         catch (Exception ex){
-            Log.d("Exception when executing updateMessageDetails", ex.getMessage());
+            Log.d(LOG_TAG, ex.getMessage());
             return -1;
         }
     }
+
+    //Reminder Queries:
+
+    public int getMaxReminderId(){
+
+        Cursor db;
+        try {
+            db = acrDB.getReadableDatabase().rawQuery("Select MAX(id) from Reminder", null);
+            if (db.getCount() > 0) {
+                db.moveToNext();
+                return db.getInt(0);
+            } else {
+                return -1;
+            }
+        }
+        catch (Exception ex){
+            Log.d(LOG_TAG, ex.getMessage());
+            return -1;
+        }
+
+    }
+
+    public int getMaxReminderGroupId(){
+
+        Cursor db;
+        try {
+            db = acrDB.getReadableDatabase().rawQuery("Select MAX(group_id) from Reminder", null);
+            if (db.getCount() > 0) {
+                db.moveToNext();
+                return db.getInt(0);
+            } else {
+                return -1;
+            }
+        }
+        catch (Exception ex){
+            Log.d(LOG_TAG, ex.getMessage());
+            return -1;
+        }
+
+    }
+
+    //Query to add a reminder
+
+    public int addReminder(int reminderUniqueID, int reminderGroupId, String contactName, String contactNumber, String subject, String message, String habitTime, String habitDate, String frequency){
+
+        SQLiteDatabase sqLiteDatabase = acrDB.getWritableDatabase();
+        try {
+
+            ContentValues values = new ContentValues();
+            values.put("id", reminderUniqueID);
+            values.put("group_id", reminderGroupId);
+            values.put("contact_name", contactName);
+            values.put("contact_number", contactNumber);
+            values.put("subject", subject);
+            values.put("message", message);
+            values.put("habit_time", habitTime);
+            values.put("habit_date", habitDate);
+            values.put("frequency", frequency);
+
+
+            return (int) sqLiteDatabase.insert("Reminder", null, values);
+        }
+        catch (Exception ex){
+            Log.d(LOG_TAG, ex.getMessage());
+            return -1;
+        }
+
+
+    }
+
+    /**
+     * A method to turn a cursor into a List object for simple listviews
+     * @param acrDB
+     * @return List<Reminder>
+     */
+    public List<Reminder> remindersToList(AcrDB acrDB){
+
+        Cursor db = acrDB.getReadableDatabase().rawQuery("Select * from Reminder", null);
+
+        List<Reminder> Reminders = new ArrayList<Reminder>();
+
+        Reminder reminder;
+
+        try{
+
+            if (db.getCount() != 0){
+                db.moveToNext();
+
+                for (int i = 0; i < db.getCount(); i ++){
+
+                    reminder = new Reminder (db.getInt(0), db.getInt(1), db.getString(2), db.getString(3), db.getString(4), db.getString(5), db.getString(6), db.getString(7), db.getString(8));
+                    Reminders.add(reminder);
+                    db.moveToNext();
+
+                }
+
+            }
+            else {
+
+                reminder = new Reminder(0, 0, null, null, null, null, null, null, null);
+                Reminders.add(reminder);
+
+            }
+            return Reminders;
+
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            return Reminders;
+        }
+    }
+
 
 }

@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.a_caring_reminder.app.Util.ReminderUtils;
 import com.a_caring_reminder.app.connection_management.AlarmReceiver;
 import com.a_caring_reminder.app.data.AcrDB;
 import com.a_caring_reminder.app.data.AcrDBContract;
@@ -63,7 +64,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
     private EditText mHabitDescription;
     private EditText mHabitFrequency;
 
-    private int mHabitID;
+    private int mReminderId;
     private ArrayList<View> mTextViews = new ArrayList<View>();
     private ArrayList<View> mPickerViews = new ArrayList<View>();
     private String habitMode = "add";
@@ -113,7 +114,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
 
             editMode = false;
             habitMode = "edit";
-            mHabitID = Integer.parseInt(getArguments().getString(HabitDetailFragment.ARG_HABIT_ID));
+            mReminderId = Integer.parseInt(getArguments().getString(HabitDetailFragment.ARG_HABIT_ID));
 
 
         }else {
@@ -307,7 +308,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
                 saveHabitDetails();
 
                 //Setup new alarms based on the current details
-                saveScheduledAlarms();
+                //saveScheduledAlarms();
 
                 //Create intent to to load the Habit List Screen which should show the newly created Habit
 
@@ -446,7 +447,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
 
         //Remove the currently scheduled Alarms before creating the alarms for the new Habit Details
 
-        removeScheduledAlarms(String.valueOf(mHabitID));
+        removeScheduledAlarms(String.valueOf(mReminderId));
 
 
         //Toast.makeText(getActivity().getApplicationContext(), "Saving Reminders", Toast.LENGTH_SHORT).show();
@@ -471,7 +472,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
         ContentValues values = new ContentValues();
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_ENTRY_ID, scheduledAlarmID);
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_MESSAGE_ID, supportMessageID);
-        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_HABIT_ID, mHabitID);
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_HABIT_ID, mReminderId);
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_TIME_OF_DAY, mHabitTime.getText().toString());
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_DATE, mHabitDate.getText().toString());
         db.insert(AcrDBContract.ScheduledAlarmEntry.TABLE_NAME, null, values);
@@ -650,22 +651,26 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
 
         if (habitMode.equals("add")){
 
-            mHabitID = (query.getMaxHabitID() + 1);
-            query.addHabit(mHabitID, mHabitTitle.getText().toString(), mHabitDescription.getText().toString());
-            int mScheduleID = (query.getMaxScheduleID() + 1);
-            query.addSchedule(mScheduleID, mHabitID, mHabitTime.getText().toString(), mHabitDate.getText().toString(), "yes", mHabitFrequency.getText().toString());
+            mReminderId = (query.getMaxReminderId() + 1);
+            Integer mReminderGroupId =  (query.getMaxReminderGroupId() + 1);
+            query.addReminder(mReminderId, mReminderGroupId, mContactName.getText().toString(), mContactNumber.getText().toString(),
+                    mHabitTitle.getText().toString(), mHabitDescription.getText().toString(), mHabitTime.getText().toString(), mHabitDate.getText().toString(), mHabitFrequency.getText().toString());
 
+
+            //int mScheduleID = (query.getMaxScheduleID() + 1);
+            //query.addSchedule(mScheduleID, mReminderId, mHabitTime.getText().toString(), mHabitDate.getText().toString(), "yes", mHabitFrequency.getText().toString());
+            ReminderUtils.dumpReminders(getActivity(), acrDB);
 
 
         } else {
 
-            query.updateHabitDetails(mHabitID, mHabitTitle.getText().toString(), mHabitDescription.getText().toString());
-            int mScheduleID = query.getScheduleID(mHabitID);
-            query.updateScheduleDetails(mScheduleID, mHabitID, mHabitTime.getText().toString(), mHabitDate.getText().toString(), "yes", mHabitFrequency.getText().toString());
+            query.updateHabitDetails(mReminderId, mHabitTitle.getText().toString(), mHabitDescription.getText().toString());
+            int mScheduleID = query.getScheduleID(mReminderId);
+            query.updateScheduleDetails(mScheduleID, mReminderId, mHabitTime.getText().toString(), mHabitDate.getText().toString(), "yes", mHabitFrequency.getText().toString());
         }
 
 
-        Log.i("ACR", String.valueOf(mHabitID));
+        Log.i("ACR", String.valueOf(mReminderId));
         Log.i("ACR", mHabitTitle.getText().toString());
         Log.i("ACR", mHabitDescription.getText().toString());
 

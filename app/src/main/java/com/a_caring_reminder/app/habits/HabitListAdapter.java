@@ -7,9 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.HabitListActivity;
 import com.a_caring_reminder.app.R;
+import com.a_caring_reminder.app.data.AcrQuery;
+import com.a_caring_reminder.app.models.Reminder;
 import com.a_caring_reminder.app.models.ScheduleItems;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class HabitListAdapter extends BaseAdapter {
 
     private int resource;
     private static LayoutInflater inflater=null;
-    private List<ScheduleItems> names;
+    private List<Reminder> names;
     Activity activity;
     ScheduleItems habits;
     AcrQuery query;
@@ -46,7 +47,7 @@ public class HabitListAdapter extends BaseAdapter {
         }
     };
 
-    public HabitListAdapter(Activity _activity, List<ScheduleItems> _items) {
+    public HabitListAdapter(Activity _activity, List<Reminder> _items) {
 
         try{
 
@@ -87,8 +88,8 @@ public class HabitListAdapter extends BaseAdapter {
             //holder.txtName.setTag(String.valueOf(position));
             holder.txtName.setTag(names.get(position).getPosition());
             if (position != -1){
-                String n = names.get(position).getText();
-                String t = names.get(position).getTime();
+                String n = names.get(position).getHabitSubject();
+                String t = names.get(position).getHabitTime();
                 holder.txtName.setText(n);
                 holder.txtTime.setText(t);
 

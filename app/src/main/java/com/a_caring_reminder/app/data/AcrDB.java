@@ -69,6 +69,17 @@ public class AcrDB extends SQLiteOpenHelper {
                     "time_of_day text, " +
                     "date string)");
 
+            db.execSQL("CREATE TABLE Reminder " +
+                    "(id int, " +
+                    "group_id int, " +
+                    "contact_name text, " +
+                    "contact_number text, " +
+                    "subject text," +
+                    "message text," +
+                    "habit_time text," +
+                    "habit_date text," +
+                    "frequency text)");
+
 
             /* Create Sample Data /*
 
@@ -117,6 +128,7 @@ public class AcrDB extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Habit" + DATABASE_NAME);
         db.execSQL("DROP TABLE IF EXISTS Schedule" + DATABASE_NAME);
         db.execSQL("DROP TABLE IF EXISTS SupportedUsers" + DATABASE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS Reminder" + DATABASE_NAME);
 
 
         onCreate(db);
