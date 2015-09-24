@@ -26,7 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.a_caring_reminder.app.Util.ReminderUtils;
-import com.a_caring_reminder.app.connection_management.AlarmReceiver;
+import com.a_caring_reminder.app.receivers.AlarmReceiver;
 import com.a_caring_reminder.app.data.AcrDB;
 import com.a_caring_reminder.app.data.AcrDBContract;
 import com.a_caring_reminder.app.data.AcrQuery;
@@ -178,7 +178,8 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
             ((EditText) rootView.findViewById(R.id.edit_text_habit_title)).setText(mTitle);
             ((EditText) rootView.findViewById(R.id.edit_text_habit_description)).setText(mItem);
             ((EditText) rootView.findViewById(R.id.text_view_habit_time)).setText(mTime);
-            ((EditText) rootView.findViewById(R.id.text_view_habit_date)).setText(mRecurrence.split("\\s+")[1]);
+            //((EditText) rootView.findViewById(R.id.text_view_habit_date)).setText(mRecurrence.split("\\s+")[1])
+
 
         } else {
 
@@ -308,7 +309,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
                 saveHabitDetails();
 
                 //Setup new alarms based on the current details
-                //saveScheduledAlarms();
+                saveScheduledAlarms();
 
                 //Create intent to to load the Habit List Screen which should show the newly created Habit
 
@@ -471,6 +472,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
         SQLiteDatabase db = acrDB.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_ENTRY_ID, scheduledAlarmID);
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_PHONE_NUMBER, mContactNumber.getText().toString());
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_MESSAGE_ID, supportMessageID);
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_HABIT_ID, mReminderId);
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_TIME_OF_DAY, mHabitTime.getText().toString());

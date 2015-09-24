@@ -76,6 +76,7 @@ public class HabitListAdapter extends BaseAdapter {
                 assert convertView != null;
                 holder.txtName = (TextView) convertView.findViewById(R.id.rowTextView);
                 holder.txtTime = (TextView) convertView.findViewById(R.id.rowTimeView);
+                holder.txtMessage = (TextView) convertView.findViewById(R.id.rowMessageTextView);
 
                 // holder.txtName.setTextColor(activity.getResources().getColor(R.color.UBJRed));
 
@@ -88,10 +89,12 @@ public class HabitListAdapter extends BaseAdapter {
             //holder.txtName.setTag(String.valueOf(position));
             holder.txtName.setTag(names.get(position).getPosition());
             if (position != -1){
-                String n = names.get(position).getHabitSubject();
-                String t = names.get(position).getHabitTime();
+                String n = "Subject: " + names.get(position).getHabitSubject();
+                String t = "Time: " + names.get(position).getHabitTime();
+                String messageSubject = "Message: " + names.get(position).getHabitMessage();
                 holder.txtName.setText(n);
                 holder.txtTime.setText(t);
+                holder.txtMessage.setText(messageSubject);
 
 
             }
@@ -123,6 +126,7 @@ public class HabitListAdapter extends BaseAdapter {
     static class ViewHolder {
         TextView txtName;
         TextView txtTime;
+        TextView txtMessage;
 
     }
 

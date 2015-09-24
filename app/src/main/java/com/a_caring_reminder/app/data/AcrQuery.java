@@ -561,6 +561,39 @@ public class AcrQuery {
 
     }
 
+    public String getScheduledAlarmPhoneNumber(int id) {
+
+        Cursor db;
+
+        String number = "15126937499";
+
+        try {
+            db = acrDB.getReadableDatabase().rawQuery("Select " + AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_PHONE_NUMBER +" From " + AcrDBContract.ScheduledAlarmEntry.TABLE_NAME + " Where id = '" + id + "'", null);
+            int i = 0;
+            if (db.getCount() > 0) {
+                if  (db.moveToFirst()) {
+
+                    number = db.getString(0);
+                    Log.d(LOG_TAG, "The number for the scheduled alarm is: " + number);
+
+
+                }
+
+                return number;
+
+
+            } else {
+                return number;
+            }
+        }
+        catch (Exception ex){
+            Log.d("getDetail", ex.getMessage());
+            return number;
+        }
+
+
+    }
+
     public ScheduledAlarm getScheduledAlarm(String id){
 
         Cursor db;
@@ -652,7 +685,7 @@ public class AcrQuery {
             return sqLiteDatabase.update("Schedule", values, "id =?", new String[]{String.valueOf(scheduleID)});
         }
         catch (Exception ex){
-            Log.d("Exception when executing updateHabitDetails", ex.getMessage());
+            Log.d("Exception executing updateHabitDetails", ex.getMessage());
             return -1;
         }
 

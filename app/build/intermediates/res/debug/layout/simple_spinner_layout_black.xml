@@ -8,4 +8,4 @@
     android:layout_height="wrap_content"
     android:ellipsize="marquee"
     android:textAlignment="inherit"
-    android:textColor="#000000"/><!-- From: file:/home/daz/source/a-caring-connection/app/src/main/res/layout/simple_spinner_layout_black.xml -->
+    android:textColor="#000000"/><!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/src/main/res/layout/simple_spinner_layout_black.xml -->

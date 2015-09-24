@@ -7,4 +7,4 @@
     android:textColor="#CCCCCC"
 
     android:textSize="12dp"
-    style="?android:attr/textAppearanceLarge"/><!-- From: file:/home/daz/source/a-caring-connection/app/src/main/res/layout/frequency_spinner_item_layout.xml -->
+    style="?android:attr/textAppearanceLarge"/><!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/src/main/res/layout/frequency_spinner_item_layout.xml -->

@@ -48,6 +48,11 @@ public class Reminder {
         return this.mSubject;
     }
 
+    public String getHabitMessage(){
+
+        return this.mMessage;
+    }
+
     public int getPosition() {
 
         return this.mReminderUniqueId;

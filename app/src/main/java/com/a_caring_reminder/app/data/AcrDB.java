@@ -64,6 +64,7 @@ public class AcrDB extends SQLiteOpenHelper {
 
             db.execSQL("CREATE TABLE ScheduledAlarms " +
                     "(id int, " +
+                    "phone_number string" +
                     "habit_id int, " +
                     "message_id int, " +
                     "time_of_day text, " +

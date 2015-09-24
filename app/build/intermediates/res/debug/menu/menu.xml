@@ -23,4 +23,4 @@
     <item android:id="@+id/habits"
         android:title="@string/habits"
         android:showAsAction="never" />
-</menu><!-- From: file:/home/daz/source/a-caring-connection/app/src/main/res/menu/menu.xml -->
+</menu><!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/src/main/res/menu/menu.xml -->

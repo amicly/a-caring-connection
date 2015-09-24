@@ -94,7 +94,7 @@
         </activity>
 
         <receiver
-            android:name=".connection_management.AlarmReceiver"
+            android:name=".receivers.AlarmReceiver"
             android:label="@string/title_activity_alarm_manager_broadcast_receiver" >
         </receiver>
 
