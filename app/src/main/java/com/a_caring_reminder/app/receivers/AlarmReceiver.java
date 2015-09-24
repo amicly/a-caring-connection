@@ -57,7 +57,11 @@ public class AlarmReceiver extends BroadcastReceiver {
         Log.i("ACR", "Setting Habit Title as " + habitNotificationTitle);
         String messageText = query.getSupportMessageDetail(String.valueOf(query.getRandomSupportMessageID()));
 
-        String habitNotificationText = "Time: " + query.getHabitTime(String.valueOf(mScheduledAlarm.getHabitID())) + " Subject: " + query.getHabitDetail(String.valueOf(mScheduledAlarm.getHabitID()));
+
+        ScheduledAlarm scheduledAlarmObject = query.getScheduledAlarm(String.valueOf(mScheduledAlarmID));
+
+
+        String habitNotificationText = "Time: " + scheduledAlarmObject.getmPhoneNumber() + " Message: " + mScheduledAlarm.getmMessage();
         Log.i("ACR", "Setting Message Text as " + messageText);
 
 

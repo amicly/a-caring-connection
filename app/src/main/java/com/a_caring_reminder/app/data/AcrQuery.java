@@ -482,7 +482,7 @@ public class AcrQuery {
             if (db.getCount() > 0) {
                 if  (db.moveToFirst()) {
                     do {
-                        item = new ScheduledAlarm(db.getInt(0),db.getInt(1),db.getInt(2));
+                        item = new ScheduledAlarm(db.getInt(0),db.getInt(1),db.getInt(2), "null", "null");
                         ITEMS.add(item);
 
                     } while (db.moveToNext());
@@ -594,20 +594,28 @@ public class AcrQuery {
 
     }
 
+
+
+
+
     public ScheduledAlarm getScheduledAlarm(String id){
 
         Cursor db;
 
 
-        ScheduledAlarm item = new ScheduledAlarm(-1, -1, -1);
+        ScheduledAlarm item = new ScheduledAlarm(-1, -1, -1, "null", "null");
 
         try {
-            db = acrDB.getReadableDatabase().rawQuery("Select id, habit_id, message_id From ScheduledAlarms Where id = '" + id + "'", null);
+            db = acrDB.getReadableDatabase().rawQuery("Select id, habit_id, message_id, " +
+                    AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_PHONE_NUMBER + ", " +
+                    AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_MESSAGE_ID +
+
+                    " From ScheduledAlarms Where id = '" + id + "'", null);
             int i = 0;
             if (db.getCount() > 0) {
                 if  (db.moveToFirst()) {
 
-                        item = new ScheduledAlarm(db.getInt(0),db.getInt(1),db.getInt(2));
+                        item = new ScheduledAlarm(db.getInt(0),db.getInt(1),db.getInt(2),db.getString(3),db.getString(4));
 
 
                 }
@@ -621,7 +629,7 @@ public class AcrQuery {
         }
         catch (Exception ex){
             Log.d("getDetail", ex.getMessage());
-            return new ScheduledAlarm(-1, -1, -1);
+            return new ScheduledAlarm(-1, -1, -1, "none","none");
         }
 
     }
@@ -685,7 +693,7 @@ public class AcrQuery {
             return sqLiteDatabase.update("Schedule", values, "id =?", new String[]{String.valueOf(scheduleID)});
         }
         catch (Exception ex){
-            Log.d("Exception executing updateHabitDetails", ex.getMessage());
+            Log.d("Ex in updateHabitDetails", ex.getMessage());
             return -1;
         }
 

@@ -8,12 +8,18 @@ public class ScheduledAlarm {
     private int mScheduledAlarmID;
     private int mHabitID;
     private int mMessageID;
+    private String mPhoneNumber;
+    private String mSubject;
+    private String mMessage;
 
-    public ScheduledAlarm(int scheduledAlarmID, int habitID, int messageID) {
+    public ScheduledAlarm(int scheduledAlarmID, int habitID, int messageID, String mPhoneNumber, String mMessage) {
 
         this.mScheduledAlarmID = scheduledAlarmID;
         this.mHabitID = habitID;
         this.mMessageID = messageID;
+        this.mPhoneNumber = mPhoneNumber;
+        this.mMessage = mMessage;
+
     }
 
     public int getPosition() {
@@ -50,6 +56,30 @@ public class ScheduledAlarm {
     public int getMessageID() {
 
         return this.mMessageID;
+    }
+
+    public String getmSubject() {
+        return mSubject;
+    }
+
+    public void setmSubject(String mSubject) {
+        this.mSubject = mSubject;
+    }
+
+    public String getmMessage() {
+        return mMessage;
+    }
+
+    public void setmMessage(String mMessage) {
+        this.mMessage = mMessage;
+    }
+
+    public String getmPhoneNumber() {
+        return mPhoneNumber;
+    }
+
+    public void setmPhoneNumber(String mPhoneNumber) {
+        this.mPhoneNumber = mPhoneNumber;
     }
 
 }

@@ -473,7 +473,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
         ContentValues values = new ContentValues();
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_ENTRY_ID, scheduledAlarmID);
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_PHONE_NUMBER, mContactNumber.getText().toString());
-        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_MESSAGE_ID, supportMessageID);
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_MESSAGE_ID, mHabitDescription.getText().toString());
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_HABIT_ID, mReminderId);
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_TIME_OF_DAY, mHabitTime.getText().toString());
         values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_DATE, mHabitDate.getText().toString());
