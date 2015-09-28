@@ -212,7 +212,7 @@
        android:textAppearance="?android:attr/textAppearanceSmall"
        android:layout_gravity="center_horizontal"
        android:textSize="16sp"
-       android:text="Daily"
+       android:text="One-time Event"
        android:focusable="false"
        android:editable="false"
        android:clickable="false"

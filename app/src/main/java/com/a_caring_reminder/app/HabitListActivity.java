@@ -1,11 +1,10 @@
 package com.a_caring_reminder.app;
 
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,7 +31,7 @@ import com.a_caring_reminder.app.supportMessages.SupportMessagesActivity;
  * {@link HabitListFragment.Callbacks} interface
  * to listen for item selections.
  */
-public class HabitListActivity extends FragmentActivity  {
+public class HabitListActivity extends ActionBarActivity {
 
 
     /**
@@ -41,6 +40,7 @@ public class HabitListActivity extends FragmentActivity  {
      */
     private boolean mTwoPane;
     private ViewPager mViewPager;
+    private PagerTabStrip mPagerTabStrip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,61 +54,13 @@ public class HabitListActivity extends FragmentActivity  {
         mViewPager = (ViewPager) findViewById(R.id.threepanelpager);
 
         mViewPager.setAdapter(adapter);
-        mViewPager.setCurrentItem(0);
+
+        mPagerTabStrip = (PagerTabStrip) findViewById(R.id.view_pager_tab_strip);
+        mPagerTabStrip.setTabIndicatorColorResource(R.color.primary_material_light);
 
 
-        mViewPager.setOnPageChangeListener(
-                new ViewPager.SimpleOnPageChangeListener() {
-                    @Override
-                    public void onPageSelected(int position) {
-                        // When swiping between pages, select the
-                        // corresponding tab.
-                        getActionBar().setSelectedNavigationItem(position);
-                    }
-                });
 
 
-        final ActionBar actionBar = getActionBar();
-
-
-        // Specify that tabs should be displayed in the action bar.
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-        // Create a tab listener that is called when the user changes tabs.
-        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
-            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-                mViewPager.setCurrentItem(tab.getPosition());
-            }
-
-            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-                mViewPager.setCurrentItem(tab.getPosition());
-            }
-
-            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-                mViewPager.setCurrentItem(tab.getPosition());
-            }
-        };
-
-        // Add 3 tabs, specifying the tab's text and TabListener
-        for (int i = 0; i < 2; i++) {
-
-            String text = "tab";
-
-            switch (i) {
-                case 0:text = getString(R.string.reminders_tab);
-                break;
-                case 1:text = getString(R.string.message_list_tab);
-                break;
-                case 2:text = getString(R.string.send_messages_tab);
-                break;
-            }
-
-
-            actionBar.addTab(
-                    actionBar.newTab()
-                            .setText(text)
-                            .setTabListener(tabListener));
-        }
 
 
 

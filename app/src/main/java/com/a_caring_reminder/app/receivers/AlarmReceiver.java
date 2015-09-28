@@ -52,16 +52,13 @@ public class AlarmReceiver extends BroadcastReceiver {
         Log.i("ACR", "The Habit ID for the alarm is  " + String.valueOf(mScheduledAlarm.getHabitID()));
         //String habitTitle = query.getHabitTime(String.valueOf(mScheduledAlarm.getHabitID())) + " "  + query.getHabitTitle(String.valueOf(mScheduledAlarm.getHabitID()));
 
-        String habitNotificationTitle = "Sending message to Darran";
+        ScheduledAlarm scheduledAlarmObject = query.getScheduledAlarm(String.valueOf(mScheduledAlarmID));
+
+        String habitNotificationTitle = "Sending message to " +query.getScheduledAlarmPhoneNumber(mScheduledAlarmID) ;
 
         Log.i("ACR", "Setting Habit Title as " + habitNotificationTitle);
         String messageText = query.getSupportMessageDetail(String.valueOf(query.getRandomSupportMessageID()));
-
-
-        ScheduledAlarm scheduledAlarmObject = query.getScheduledAlarm(String.valueOf(mScheduledAlarmID));
-
-
-        String habitNotificationText = "Time: " + scheduledAlarmObject.getmPhoneNumber() + " Message: " + mScheduledAlarm.getmMessage();
+        String habitNotificationText = "Message: " + mScheduledAlarm.getmMessage();
         Log.i("ACR", "Setting Message Text as " + messageText);
 
 
@@ -70,7 +67,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
                 .setSmallIcon(R.drawable.acc_heart)
                 .setContentTitle(habitNotificationTitle)
-                .setContentText(messageText)
+                .setContentText(habitNotificationText)
                 .setVibrate(mVibratePattern);
 
 
@@ -85,9 +82,9 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         SmsManager smsManager = SmsManager.getDefault();
 
-        Log.i(LOG_TAG, "Sending SMS message to 512-693-7499");
+        Log.i(LOG_TAG, "Sending SMS message to" + query.getScheduledAlarmPhoneNumber(mScheduledAlarmID));
 
-        smsManager.sendTextMessage(query.getScheduledAlarmPhoneNumber(mScheduledAlarmID), null, "Hi! " + habitNotificationText, null, null);
+        smsManager.sendTextMessage(query.getScheduledAlarmPhoneNumber(mScheduledAlarmID), null, mScheduledAlarm.getmMessage(), null, null);
 
 
 

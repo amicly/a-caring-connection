@@ -1,14 +1,12 @@
 package com.a_caring_reminder.app.pageradapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.a_caring_reminder.app.HabitDetailActivity;
 import com.a_caring_reminder.app.R;
 
 /**
@@ -19,6 +17,8 @@ public class AcrPagerAdapter extends PagerAdapter {
     public int getCount() {
         return 2;
     }
+
+    private String tabTitles[] = new String[] { "Habits", "Settings"};
 
     public Object instantiateItem(View collection, int position) {
 
@@ -64,5 +64,10 @@ public class AcrPagerAdapter extends PagerAdapter {
     @Override
     public Parcelable saveState() {
         return null;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return tabTitles[position];
     }
 }

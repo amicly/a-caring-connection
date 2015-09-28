@@ -1,7 +1,7 @@
 package com.a_caring_reminder.app;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.WindowManager;
 
@@ -15,7 +15,7 @@ import android.view.WindowManager;
  * This activity is mostly just a 'shell' activity containing nothing
  * more than a {@link HabitDetailFragment}.
  */
-public class HabitDetailActivity extends Activity {
+public class HabitDetailActivity extends ActionBarActivity {
 
 
     @Override

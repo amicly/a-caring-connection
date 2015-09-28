@@ -487,6 +487,17 @@
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
+    <!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/src/main/res/values/themes.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <!-- customize the color palette -->
+    <item name="colorPrimary">@color/material_blue_500</item>
+    <item name="colorPrimaryDark">@color/material_blue_700</item>
+    <item name="colorAccent">@color/material_green_A200</item>
+
+</style>
+    <!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
         <item name="listLayout">@layout/abc_select_dialog_material</item>
@@ -1676,15 +1687,6 @@
         <item name="mediaRoutePlayDrawable">@drawable/mr_ic_play_light</item>
         <item name="mediaRoutePauseDrawable">@drawable/mr_ic_pause_light</item>
     </style>
-    <!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/src/main/res/values/themes.xml -->
-    <eat-comment/>
-    <style name="Theme.MyTheme" parent="Theme.AppCompat.Light">
-    <!-- customize the color palette -->
-    <item name="colorPrimary">@color/material_blue_500</item>
-    <item name="colorPrimaryDark">@color/material_blue_700</item>
-    <item name="colorAccent">@color/material_green_A200</item>
-
-</style>
     <!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
