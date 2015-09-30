@@ -2,235 +2,480 @@
 <items version="2" >
 
     <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.1.0/classes.jar"
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.1.0/classes.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-c7130513fdb27687f0e8483cd699a16efc65b725.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-26c564a7dcc6d59f04f6d98cd7f227194fe88bae.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="82054090e487d78e163a988557db62d809fa9b95">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-e0fca144101c5655f84925e0dbc24e759aaa9eab.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-55d48450d209c9ad2df3c42dc6276a45658959ba.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="997773777cf3904c11d6764fe3b7668538220e49">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-455e76e27ea3125e765cf6204d73a84cdc2a638a.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3178362320bcf51228835b60ff978efadfd1f783">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-20f31e99c9cee9d491b252549fec8b04197d3511.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-bbef9310a3beb957eb9a8272b20000b753c9943f.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/library-2.4.0-6ee1897b30248f0b287214a3db4ea3e9f7d4b53c.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-466527e550a00845196ba6b66d551f67069c8d5e.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-aca5f2008b770acd83b0aef384cfdc241164f8ea.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-f914fb5ede3066d52555c8f256a58f9f9f156c0f.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-c571d19585c7eb2f5fd919968c7ebd777f8e8fdf.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
+        revision="23.0.1"
         sha1="95758a2905669affbffc5ddd262921d375674fad">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-d5bc7807d7c12bb7fdcc307b3b3eaed2acf82851.jar" />
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-d28fdcca69e57737a14a5a2995dff63d0ad5251a.jar" />
     </item>
     <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/libs/internal_impl-22.2.0.jar"
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/classes.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-3e8d44656b134be51d2ae26070b60225d02aa384.jar" />
+        revision="23.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-35ff8a9583d941744f477b52ed8dbb6ea701dfea.jar" />
     </item>
     <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/libs/internal_impl-22.2.0.jar"
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-d7ed4f07334d720937a7f372e71693140a4e6fae.jar" />
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-35ff8a9583d941744f477b52ed8dbb6ea701dfea.jar" />
     </item>
     <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/classes.jar"
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.1.0/classes.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-749fb259ae44343242799143befdd055f1f54bb7.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-fdb9e14bd0ab9dd340c4914e1a7813208e8daa10.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-1ea1159d3dba626c917b45b835b6a40e3a494525.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/Downloads/adt-bundle-mac-x86_64-20131030/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-aa1c63a52773b88c936b09411f4da863f0e17728.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-4abe5c94bcc9f45a2f97509ebafa5c549af3af87.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.melnykov/floatingactionbutton/1.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ee9ae2b87d57a33a7381c75d54db12bdf2995656">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-1fa497fa9133ba2db0114c7b27faa7629db1d7bd.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-8f9268dfb29504f607dd8b84626d979660ae4798.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-f662db2b0f6c06238b7e6650585741927a9a92e2.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a60a5e993c98c864010053cb901b7eab25306568">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/gson-2.2.4-ed11e95dcecb3efb1578439748bcea36efd9ba0e.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-4ec0ea88e4b30b02536dd20a52bcf73f662debf8.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
+        revision="23.0.1"
         sha1="d61920aba361832a9545a43fa8c9453eb02f18f7">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-77938f44fe86689d52ee3bb76ef695d669471418.jar" />
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-cbaf9997359b3e41b2c76decba626d28e4328650.jar" />
     </item>
     <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-a2cefe276317770308b69cfcab2a8a432b833357.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-f4fac64605e7ad46c37c14e2ffcc4e97a3f055ac.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-c01fddbbe6112be221eaf46555acb293fb99c76d.jar" />
-    </item>
-    <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.1.0/classes.jar"
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.1.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-3e6d65113d654df3192eebb10492d64e25c80307.jar" />
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-96a1c6dba7fc7a445c701c7b2b708386b05b05e0.jar" />
     </item>
     <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.1.0/classes.jar"
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-457b5f32947b6175b91612ffffa8af93f8a59161.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-96a1c6dba7fc7a445c701c7b2b708386b05b05e0.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="997773777cf3904c11d6764fe3b7668538220e49">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-c45418f8cb374dc2ed414decfc38b0d2d5b4c0c4.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d61920aba361832a9545a43fa8c9453eb02f18f7">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-cbaf9997359b3e41b2c76decba626d28e4328650.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="17449c47df35c754b257532052f1270c444f7993">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-aa6cefee1da8a61e8b2fc3911fc33b46cfbdeae2.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-ae0c6eb1058a0514e2d824345a0089acfae8b365.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-fb1e7fb65215f2ad07aadec8b5728c9e82e6c1b3.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-12d8d2639429d961c2e9db8c967b2ceea389f878.jar" />
+    </item>
+    <item
+        jar="/home/daz/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/gson-2.2.4-22501873a0bce73181e1336a16b71de609ea152c.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-fb1e7fb65215f2ad07aadec8b5728c9e82e6c1b3.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-df7d486268ddbfc64fafb5997c7de7e52abdb55d.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-3b055133c3cf749b31cbfa880c275f426418d718.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="997773777cf3904c11d6764fe3b7668538220e49">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-c45418f8cb374dc2ed414decfc38b0d2d5b4c0c4.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-e31d8670297566473ce59ba86aa4d5998938a4b1.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-076eec75d754344197790b41f668061931c224a7.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-b3c385288b7c78887762a35ea049f6635da86fbf.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="482de223655d06253cc6a4955d653f8994169500">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-3020ee3c24da866f99041da796d9ad5b7b8b343e.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-b3c385288b7c78887762a35ea049f6635da86fbf.jar" />
+    </item>
+    <item
+        jar="/home/daz/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/gson-2.2.4-22501873a0bce73181e1336a16b71de609ea152c.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-df7d486268ddbfc64fafb5997c7de7e52abdb55d.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-df7aa6ca665199a8bff2168f3d3afd43fab0d1be.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-2223fb87b1420e32c33f33ff064b1b32e03bb427.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-bd03aaff7af2443e1c403b6d4a8d6ca718fa3d0e.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-35e0c9d66ad09038c4b9343111116328dbd740b7.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-819b7a948e3a32b300bf6877f6a62f444f2f2442.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.1.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-dd0f0910fb7fda1f664e0d2386574f6baf02bebf.jar" />
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-e31d8670297566473ce59ba86aa4d5998938a4b1.jar" />
     </item>
     <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.1.0/classes.jar"
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3178362320bcf51228835b60ff978efadfd1f783">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-a1877517a6f7ad3ed36a17deac29ffde55e1c9ce.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-076eec75d754344197790b41f668061931c224a7.jar" />
+    </item>
+    <item
+        jar="/home/daz/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/library-2.4.0-b20676758c667bc2d7c83507a085e8825117dfb2.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-8c714d3b56f3c051cce90f477b50b2643776f337.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-200005b876461de2512c2693d55e15777a6669cc.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-457b5f32947b6175b91612ffffa8af93f8a59161.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-3b055133c3cf749b31cbfa880c275f426418d718.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.1.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="17449c47df35c754b257532052f1270c444f7993">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-614c526f475887b757fabf770b98357efd90c54a.jar" />
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-aa6cefee1da8a61e8b2fc3911fc33b46cfbdeae2.jar" />
     </item>
     <item
-        jar="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.1.0/classes.jar"
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-023cd106fe931aa91155f11dca63a671924145cf.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-a4e34c39c8c8ac69b042f2ffd202d40ffc5a3fd0.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.melnykov/floatingactionbutton/1.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ee9ae2b87d57a33a7381c75d54db12bdf2995656">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-402b80713763b5a7185d2e07969409348f625495.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-e020464c8d48e23f23e68deeaaf23d82d791ea51.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-8540ae67a6bbf2509a46ed89c249ddedc7bcedff.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="82054090e487d78e163a988557db62d809fa9b95">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-61e9f865545772ac47b39df4d7f0040eec00f7ff.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="95758a2905669affbffc5ddd262921d375674fad">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-d28fdcca69e57737a14a5a2995dff63d0ad5251a.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-a4e34c39c8c8ac69b042f2ffd202d40ffc5a3fd0.jar" />
+    </item>
+    <item
+        jar="/media/Storage/home/daz/adt-bundle-linux-x86_64-20131030/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-acbd7204ef6203794f6cdeecd0aaa4a5962d8c7f.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-3c88ccab9245fe8bfcd4b0296b2c3c23e2d5d514.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-df7aa6ca665199a8bff2168f3d3afd43fab0d1be.jar" />
+    </item>
+    <item
+        jar="/media/Storage/home/daz/adt-bundle-linux-x86_64-20131030/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-acbd7204ef6203794f6cdeecd0aaa4a5962d8c7f.jar" />
+    </item>
+    <item
+        jar="/home/daz/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/library-2.4.0-b20676758c667bc2d7c83507a085e8825117dfb2.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-3c88ccab9245fe8bfcd4b0296b2c3c23e2d5d514.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-8c714d3b56f3c051cce90f477b50b2643776f337.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-819b7a948e3a32b300bf6877f6a62f444f2f2442.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-2223fb87b1420e32c33f33ff064b1b32e03bb427.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-e020464c8d48e23f23e68deeaaf23d82d791ea51.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-bd03aaff7af2443e1c403b6d4a8d6ca718fa3d0e.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-8540ae67a6bbf2509a46ed89c249ddedc7bcedff.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-200005b876461de2512c2693d55e15777a6669cc.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="82054090e487d78e163a988557db62d809fa9b95">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-61e9f865545772ac47b39df4d7f0040eec00f7ff.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-12d8d2639429d961c2e9db8c967b2ceea389f878.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3178362320bcf51228835b60ff978efadfd1f783">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-a1877517a6f7ad3ed36a17deac29ffde55e1c9ce.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-023cd106fe931aa91155f11dca63a671924145cf.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.1.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="482de223655d06253cc6a4955d653f8994169500">
-        <dex dex="/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-65cf5298a1c9732fb39542986e987f132c89f123.jar" />
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-3020ee3c24da866f99041da796d9ad5b7b8b343e.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.melnykov/floatingactionbutton/1.1.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ee9ae2b87d57a33a7381c75d54db12bdf2995656">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-402b80713763b5a7185d2e07969409348f625495.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-ae0c6eb1058a0514e2d824345a0089acfae8b365.jar" />
+    </item>
+    <item
+        jar="/home/daz/source/a-caring-connection/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
+        <dex dex="/home/daz/source/a-caring-connection/app/build/intermediates/pre-dexed/debug/classes-35e0c9d66ad09038c4b9343111116328dbd740b7.jar" />
     </item>
 
 </items>

@@ -4,4 +4,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scheduleActivity"
-    tools:ignore="MergeRootFrame" /><!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/src/main/res/layout/activity_schedule.xml -->
+    tools:ignore="MergeRootFrame" /><!-- From: file:/home/daz/source/a-caring-connection/app/src/main/res/layout/activity_schedule.xml -->

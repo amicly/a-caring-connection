@@ -14,11 +14,13 @@ import com.a_caring_reminder.app.R;
  */
 public class AcrPagerAdapter extends PagerAdapter {
 
+    private String tabTitles[] = new String[] { "Next Day", "Scheduled"};
+
+
     public int getCount() {
         return 2;
     }
 
-    private String tabTitles[] = new String[] { "Habits", "Settings"};
 
     public Object instantiateItem(View collection, int position) {
 

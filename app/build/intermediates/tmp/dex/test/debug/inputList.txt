@@ -1,2 +1,0 @@
-/home/daz/source/a-caring-reminder/app/build/intermediates/classes/test/debug
-/home/daz/source/a-caring-reminder/app/build/intermediates/pre-dexed/test/debug/espresso-1.1-bundled-31e3a4ad4fe0e99ad991543c1ba20737917b14fd.jar

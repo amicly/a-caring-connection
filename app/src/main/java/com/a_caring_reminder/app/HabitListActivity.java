@@ -2,17 +2,15 @@ package com.a_caring_reminder.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.WindowManager;
 
-import com.a_caring_reminder.app.createAMessage.SupportedListActivity;
 import com.a_caring_reminder.app.pageradapter.AcrPagerAdapter;
-import com.a_caring_reminder.app.supportMessages.SupportMessagesActivity;
 
 
 /**
@@ -31,7 +29,7 @@ import com.a_caring_reminder.app.supportMessages.SupportMessagesActivity;
  * {@link HabitListFragment.Callbacks} interface
  * to listen for item selections.
  */
-public class HabitListActivity extends ActionBarActivity {
+public class HabitListActivity extends AppCompatActivity {
 
 
     /**
@@ -51,19 +49,12 @@ public class HabitListActivity extends ActionBarActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
         AcrPagerAdapter adapter = new AcrPagerAdapter();
-        mViewPager = (ViewPager) findViewById(R.id.mainviewpager);
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
 
         mViewPager.setAdapter(adapter);
 
-        mPagerTabStrip = (PagerTabStrip) findViewById(R.id.view_pager_tab_strip);
-        mPagerTabStrip.setTabIndicatorColorResource(R.color.primary_material_light);
-
-
-
-
-
-
-
+        TabLayout tabLayout = (TabLayout)findViewById(R.id.tablayout);
+        tabLayout.setupWithViewPager(mViewPager);
 
 
 
@@ -111,48 +102,48 @@ public class HabitListActivity extends ActionBarActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            /*
-            case android.R.id.home:
-                // This ID represents the Home or Up button. In the case of this
-                // activity, the Up button is shown. Use NavUtils to allow users
-                // to navigate up one level in the application structure. For
-                // more details, see the Navigation pattern on Android Design:
-                //
-                // http://developer.android.com/design/patterns/navigation.html#up-vs-back
-                //
-                NavUtils.navigateUpTo(this, new Intent(this, TodaysActivity.class));
-                return true;
-                */
-
-            case R.id.messages:
-
-                Intent messageActivityIntent = new Intent(this, SupportMessagesActivity.class);
-                startActivity(messageActivityIntent);
-
-                return true;
-
-            case R.id.habits:
-                Intent habitListIntent = new Intent(this, HabitListActivity.class);
-                startActivity(habitListIntent);
-
-                return true;
-
-            case R.id.support:
-                Intent ListIntent = new Intent(this, SupportedListActivity.class);
-                startActivity(ListIntent);
-
-                return true;
-
-
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//
+//            /*
+//            case android.R.id.home:
+//                // This ID represents the Home or Up button. In the case of this
+//                // activity, the Up button is shown. Use NavUtils to allow users
+//                // to navigate up one level in the application structure. For
+//                // more details, see the Navigation pattern on Android Design:
+//                //
+//                // http://developer.android.com/design/patterns/navigation.html#up-vs-back
+//                //
+//                NavUtils.navigateUpTo(this, new Intent(this, TodaysActivity.class));
+//                return true;
+//                */
+//
+//            case R.id.messages:
+//
+//                Intent messageActivityIntent = new Intent(this, SupportMessagesActivity.class);
+//                startActivity(messageActivityIntent);
+//
+//                return true;
+//
+//            case R.id.habits:
+//                Intent habitListIntent = new Intent(this, HabitListActivity.class);
+//                startActivity(habitListIntent);
+//
+//                return true;
+//
+//            case R.id.support:
+//                Intent ListIntent = new Intent(this, SupportedListActivity.class);
+//                startActivity(ListIntent);
+//
+//                return true;
+//
+//
+//
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 
 
