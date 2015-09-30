@@ -2301,7 +2301,7 @@ containing a value of this type.
         public static final int text_view_habit_date=0x7f0b008c;
         public static final int text_view_habit_time=0x7f0b008a;
         public static final int text_wrapper=0x7f0b00ab;
-        public static final int threepanelpager=0x7f0b0073;
+        public static final int mainviewpager =0x7f0b0073;
         public static final int time=0x7f0b00b8;
         public static final int title=0x7f0b004a;
         public static final int title_bar=0x7f0b00a4;

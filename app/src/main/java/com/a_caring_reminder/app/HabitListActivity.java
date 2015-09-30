@@ -51,12 +51,15 @@ public class HabitListActivity extends ActionBarActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
         AcrPagerAdapter adapter = new AcrPagerAdapter();
-        mViewPager = (ViewPager) findViewById(R.id.threepanelpager);
+        mViewPager = (ViewPager) findViewById(R.id.mainviewpager);
 
         mViewPager.setAdapter(adapter);
 
         mPagerTabStrip = (PagerTabStrip) findViewById(R.id.view_pager_tab_strip);
         mPagerTabStrip.setTabIndicatorColorResource(R.color.primary_material_light);
+
+
+
 
 
 

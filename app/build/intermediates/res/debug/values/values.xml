@@ -494,6 +494,7 @@
     <item name="colorPrimary">@color/material_blue_500</item>
     <item name="colorPrimaryDark">@color/material_blue_700</item>
     <item name="colorAccent">@color/material_green_A200</item>
+    <item name="android:icon">@drawable/acc_heart</item>
 
 </style>
     <!-- From: file:/Users/darrankelinske/source/a-caring-connection/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
