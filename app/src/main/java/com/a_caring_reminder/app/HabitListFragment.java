@@ -3,6 +3,7 @@ package com.a_caring_reminder.app;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +15,6 @@ import com.a_caring_reminder.app.data.AcrDB;
 import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.habits.HabitListAdapter;
 import com.a_caring_reminder.app.models.Reminder;
-import com.melnykov.fab.FloatingActionButton;
 
 import java.util.List;
 
@@ -23,13 +23,11 @@ import java.util.List;
  * also supports tablet devices by allowing list items to be given an
  * 'activated' state upon selection. This helps indicate which item is
  * currently being viewed in a {@link HabitDetailFragment}.
- * <p>
+ * <p/>
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
 public class HabitListFragment extends ListFragment {
-
-
 
 
     //SQLite class
@@ -113,7 +111,7 @@ public class HabitListFragment extends ListFragment {
                     ITEMS);
 
 
-                setListAdapter(adapter);
+            setListAdapter(adapter);
 
             //}
 
@@ -131,8 +129,6 @@ public class HabitListFragment extends ListFragment {
         ListView list = (ListView) root.findViewById(android.R.id.list);
 
         FloatingActionButton fab = (FloatingActionButton) root.findViewById(R.id.fab);
-        fab.attachToListView(list);
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,7 +140,7 @@ public class HabitListFragment extends ListFragment {
             }
 
 
-            });
+        });
 
         return root;
     }
@@ -166,14 +162,6 @@ public class HabitListFragment extends ListFragment {
                 mCallbacks.onItemSelected(String.valueOf(s));
             }
         });*/
-
-
-
-
-
-
-
-
 
 
     }
@@ -204,11 +192,10 @@ public class HabitListFragment extends ListFragment {
     }
 
 
-
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView, view, position, id);
-        Log.i("ACR", "The id for the habit at this is" +ITEMS.get(position).getPosition());
+        Log.i("ACR", "The id for the habit at this is" + ITEMS.get(position).getPosition());
 
 
     }
@@ -244,7 +231,10 @@ public class HabitListFragment extends ListFragment {
         mActivatedPosition = position;
     }
 
-
+    static HabitListFragment newInstance() {
+        HabitListFragment f = new HabitListFragment();
+        return f;
+    }
 
 
 }

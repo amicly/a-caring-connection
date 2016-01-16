@@ -22,7 +22,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.a_caring_reminder.app.services.FileRegistration;
 import com.a_caring_reminder.app.supportMessages.SupportMessagesActivity;
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
@@ -72,7 +71,7 @@ public class SplashActivity extends Activity{
             }
             else {
                 if (prefs.getString("regid", "") == "") {
-                    getRegId();
+//                    getRegId();
                 }
             }
         }
@@ -157,55 +156,55 @@ public class SplashActivity extends Activity{
         return true;
     }
 
-    public void getRegId(){
-        new AsyncTask<Void, Void, String>() {
-            @Override
-            protected String doInBackground(Void... params) {
-                String msg = "";
-
-                try {
-                    if (gcm == null) {
-                        gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
-                    }
-                    //Get and store the regid
-                    regid = gcm.register(PROJECT_NUMBER);
-                    storeRegistrationId(regid);
-
-                    //Get reference to e-mail
-                    SharedPreferences sharedPreferences = getSharedPreferences("com.a_caring_reminder.app", Context.MODE_PRIVATE);
-                    String email = sharedPreferences.getString("Email", "NO EMAIL IN SHPref");
-
-                    //Call asyncTask for sending the regid to our server
-                    FileRegistration fr = new FileRegistration(getString(R.string.postCreate));
-
-
-
-                    // Justin: was not referencing saved e-mail, access token irrelevant here.
-//                    String[] f = new String[]{prefs.getString("Access Token", ""), regid};
-
-                    //Sending user (email) and regid
-                    String[] f = new String[]{email, regid};
-                    fr.execute(f);
-
-                    msg = "Device registered, registration ID=" + regid;
-                    Log.i("GCM", msg);
-
-                } catch (IOException ex) {
-                    msg = "Error :" + ex.getMessage();
-
-                }catch (Exception ex) {
-                    msg = "Error :" + ex.getMessage();
-
-                }
-                return msg;
-            }
-
-            @Override
-            protected void onPostExecute(String msg) {
-               //ToDo: Something changes in the app that shows that we can now receive messages.
-            }
-        }.execute(null, null, null);
-    }
+//    public void getRegId(){
+//        new AsyncTask<Void, Void, String>() {
+//            @Override
+//            protected String doInBackground(Void... params) {
+//                String msg = "";
+//
+//                try {
+//                    if (gcm == null) {
+//                        gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
+//                    }
+//                    //Get and store the regid
+//                    regid = gcm.register(PROJECT_NUMBER);
+//                    storeRegistrationId(regid);
+//
+//                    //Get reference to e-mail
+//                    SharedPreferences sharedPreferences = getSharedPreferences("com.a_caring_reminder.app", Context.MODE_PRIVATE);
+//                    String email = sharedPreferences.getString("Email", "NO EMAIL IN SHPref");
+//
+//                    //Call asyncTask for sending the regid to our server
+////                    FileRegistration fr = new FileRegistration(getString(R.string.postCreate));
+//
+//
+//
+//                    // Justin: was not referencing saved e-mail, access token irrelevant here.
+////                    String[] f = new String[]{prefs.getString("Access Token", ""), regid};
+//
+//                    //Sending user (email) and regid
+//                    String[] f = new String[]{email, regid};
+//                    fr.execute(f);
+//
+//                    msg = "Device registered, registration ID=" + regid;
+//                    Log.i("GCM", msg);
+//
+//                } catch (IOException ex) {
+//                    msg = "Error :" + ex.getMessage();
+//
+//                }catch (Exception ex) {
+//                    msg = "Error :" + ex.getMessage();
+//
+//                }
+//                return msg;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String msg) {
+//               //ToDo: Something changes in the app that shows that we can now receive messages.
+//            }
+//        }.execute(null, null, null);
+//    }
 
     /**
      * Stores the registration ID and app versionCode in the application's
@@ -263,7 +262,7 @@ public class SplashActivity extends Activity{
                     prefs.edit().putString("Access Token", token).commit();
 
                     if (checkPlayServices()) {
-                        getRegId();
+//                        getRegId();
                     }
                     else{
                         //ToDo:Add a notification that this device won't work.

@@ -17,13 +17,6 @@
         tools:context=".HabitListActivity"
         tools:layout="@android:layout/list_content" />
 
-
-
-
-
-
-
-
 </RelativeLayout>
 
 

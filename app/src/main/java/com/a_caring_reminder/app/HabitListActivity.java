@@ -3,14 +3,15 @@ package com.a_caring_reminder.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.WindowManager;
-
-import com.a_caring_reminder.app.pageradapter.AcrPagerAdapter;
 
 
 /**
@@ -29,7 +30,7 @@ import com.a_caring_reminder.app.pageradapter.AcrPagerAdapter;
  * {@link HabitListFragment.Callbacks} interface
  * to listen for item selections.
  */
-public class HabitListActivity extends AppCompatActivity {
+public class HabitListActivity extends FragmentActivity{
 
 
     /**
@@ -48,7 +49,7 @@ public class HabitListActivity extends AppCompatActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
-        AcrPagerAdapter adapter = new AcrPagerAdapter();
+        AcrPagerAdapter adapter = new AcrPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
 
         mViewPager.setAdapter(adapter);
@@ -144,6 +145,43 @@ public class HabitListActivity extends AppCompatActivity {
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }
+
+    public static class AcrPagerAdapter extends FragmentPagerAdapter {
+
+        private String tabTitles[] = new String[] { "Next Day", "Scheduled"};
+
+        public AcrPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+
+        public int getCount() {
+            return 1;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+
+            int resId = 0;
+            switch (position) {
+                case 0:
+                    return HabitListFragment.newInstance();
+                case 1:
+                    return HabitListFragment.newInstance();
+                case 2:
+                    return HabitListFragment.newInstance();
+                default:
+                    return null;
+
+            }
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tabTitles[position];
+        }
+    }
+
 
 
 
