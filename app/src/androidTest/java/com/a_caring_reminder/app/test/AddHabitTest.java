@@ -1,32 +1,27 @@
 package com.a_caring_reminder.app.test;
 
 
-import android.app.TimePickerDialog;
 import android.test.ActivityInstrumentationTestCase2;
 import android.view.View;
 import android.widget.TimePicker;
 
-import com.a_caring_reminder.app.HabitDetailActivity;
+import com.a_caring_reminder.app.textdetail.TextDetailActivity;
 import com.a_caring_reminder.app.R;
 import com.google.android.apps.common.testing.ui.espresso.UiController;
 import com.google.android.apps.common.testing.ui.espresso.ViewAction;
 import com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers;
 
 import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
 
 import static com.google.android.apps.common.testing.ui.espresso.Espresso.onView;
-import static com.google.android.apps.common.testing.ui.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static com.google.android.apps.common.testing.ui.espresso.action.ViewActions.*;
-import static com.google.android.apps.common.testing.ui.espresso.assertion.ViewAssertions.matches;
-import static com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers.withClassName;
 import static com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers.withId;
 import static com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Created by darrankelinske on 8/25/14.
  */
-public class AddHabitTest extends ActivityInstrumentationTestCase2<HabitDetailActivity> {
+public class AddHabitTest extends ActivityInstrumentationTestCase2<TextDetailActivity> {
 
 
     public static ViewAction setTime(final int hour, final int minute) {
@@ -51,7 +46,7 @@ public class AddHabitTest extends ActivityInstrumentationTestCase2<HabitDetailAc
     @SuppressWarnings("deprecation")
     public AddHabitTest() {
 
-        super("com.a_caring_reminder.app", HabitDetailActivity.class);
+        super("com.a_caring_reminder.app", TextDetailActivity.class);
 
     }
 

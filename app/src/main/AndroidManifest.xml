@@ -69,7 +69,7 @@
                 android:value=".createAMessage.SupportedListActivity" />
         </activity>
         <activity
-            android:name=".HabitDetailActivity"
+            android:name=".textdetail.TextDetailActivity"
             android:label="@string/title_habit_detail"
             android:parentActivityName=".HabitListActivity" >
             <meta-data

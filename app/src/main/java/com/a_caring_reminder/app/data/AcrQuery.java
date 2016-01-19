@@ -17,9 +17,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.TimeZone;
 
 /**
  * Created by Dan Bryant on 6/15/2014.
@@ -943,6 +946,52 @@ public class AcrQuery {
      * @return List<Reminder>
      */
     public List<Text> remindersToList(AcrDB acrDB){
+
+        Calendar alarmCalendar = Calendar.getInstance(TimeZone.getDefault(), Locale.getDefault());
+        Date mStartDate = new Date();
+        alarmCalendar.setTime(mStartDate);
+
+        Cursor db = acrDB.getReadableDatabase().rawQuery("Select * from Reminder where timestamp > " + (int) alarmCalendar.getTimeInMillis(), null);
+
+        List<Text> texts = new ArrayList<Text>();
+
+        Text text;
+
+        try{
+
+            if (db.getCount() != 0){
+                db.moveToNext();
+
+                for (int i = 0; i < db.getCount(); i ++){
+
+                    text = new Text(db.getInt(0), db.getInt(1), db.getString(2), db.getString(3), db.getString(4), db.getString(5), db.getString(6), db.getString(7), db.getString(8));
+                    texts.add(text);
+                    db.moveToNext();
+
+                }
+
+            }
+            else {
+
+                text = new Text(0, 0, null, null, null, null, null, null, null);
+                texts.add(text);
+
+            }
+            return texts;
+
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            return texts;
+        }
+    }
+
+    /**
+     * A method to turn a cursor into a List object for simple listviews
+     * @param acrDB
+     * @return List<Reminder>
+     */
+    public List<Text> upcomingTextList(AcrDB acrDB){
 
         Cursor db = acrDB.getReadableDatabase().rawQuery("Select * from Reminder", null);
 

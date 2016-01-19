@@ -13,18 +13,22 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.WindowManager;
 
+import com.a_caring_reminder.app.textdetail.TextDetailActivity;
+import com.a_caring_reminder.app.textdetail.TextDetailFragment;
+import com.a_caring_reminder.app.texts.TextsFragment;
+
 
 /**
  * An activity representing a list of habits. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link HabitDetailActivity} representing
+ * lead to a {@link TextDetailActivity} representing
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  * <p>
  * The activity makes heavy use of fragments. The list of items is a
  * {@link TextsFragment} and the item details
- * (if present) is a {@link HabitDetailFragment}.
+ * (if present) is a {@link TextDetailFragment}.
  * <p>
  * This activity also implements the required
  * {@link TextsFragment.Callbacks} interface
@@ -72,8 +76,8 @@ public class HabitListActivity extends FragmentActivity{
             // adding or replacing the detail fragment using a
             // fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(HabitDetailFragment.ARG_HABIT_ID, description);
-            HabitDetailFragment fragment = new HabitDetailFragment();
+            arguments.putString(TextDetailFragment.ARG_HABIT_ID, description);
+            TextDetailFragment fragment = new TextDetailFragment();
             fragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
                     .replace(R.id.habit_detail_container, fragment)
@@ -82,8 +86,8 @@ public class HabitListActivity extends FragmentActivity{
         } else {
             // In single-pane mode, simply start the detail activity
             // for the selected item ID.
-            Intent detailIntent = new Intent(this, HabitDetailActivity.class);
-            detailIntent.putExtra(HabitDetailFragment.ARG_HABIT_ID, description);
+            Intent detailIntent = new Intent(this, TextDetailActivity.class);
+            detailIntent.putExtra(TextDetailFragment.ARG_HABIT_ID, description);
             startActivity(detailIntent);
         }
     }

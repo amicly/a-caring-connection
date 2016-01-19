@@ -7,6 +7,7 @@ public class Text {
 
     private int mReminderUniqueId;
     private int mReminderGroupId;
+
     private String mContactName;
     private String mContactNumber;
     private String mSubject;
@@ -15,9 +16,7 @@ public class Text {
     private String mHabitDate;
     private String mFrequency;
 
-
-    public Text(int reminderUniqueID, int reminderGroupId, String contactName, String contactNumber, String subject, String message, String habitTime, String habitDate, String frequency)
-    {
+    public Text(int reminderUniqueID, int reminderGroupId, String contactName, String contactNumber, String subject, String message, String habitTime, String habitDate, String frequency) {
 
         this.mReminderUniqueId = reminderUniqueID;
         this.mReminderGroupId = reminderGroupId;
@@ -28,27 +27,25 @@ public class Text {
         this.mHabitTime = habitTime;
         this.mHabitDate = habitDate;
         this.mFrequency = frequency;
-
-
     }
 
 
-    public int getReminderUniqueId(){
+    public int getReminderUniqueId() {
 
         return this.mReminderUniqueId;
     }
 
-    public String getHabitTime(){
+    public String getHabitTime() {
 
         return this.mHabitTime;
     }
 
-    public String getHabitSubject(){
+    public String getHabitSubject() {
 
         return this.mSubject;
     }
 
-    public String getHabitMessage(){
+    public String getHabitMessage() {
 
         return this.mMessage;
     }
@@ -58,9 +55,12 @@ public class Text {
         return this.mReminderUniqueId;
     }
 
+    public String getHabitDate() {
+        return mHabitDate;
+    }
 
-
-
-
+    public String getContactName() {
+        return mContactName;
+    }
 
 }

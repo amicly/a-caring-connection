@@ -5,7 +5,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.view.View;
 import android.widget.EditText;
 
-import com.a_caring_reminder.app.HabitDetailActivity;
+import com.a_caring_reminder.app.textdetail.TextDetailActivity;
 import com.a_caring_reminder.app.R;
 
 import org.hamcrest.Description;
@@ -20,7 +20,7 @@ import static com.google.android.apps.common.testing.ui.espresso.matcher.ViewMat
 /**
  * Created by darrankelinske on 7/8/14.
  */
-public class HabitDetailTest extends ActivityInstrumentationTestCase2<HabitDetailActivity> {
+public class HabitDetailTest extends ActivityInstrumentationTestCase2<TextDetailActivity> {
 
     public static Matcher<View> withHint(final String expectedHint) {
         return new TypeSafeMatcher<View>() {
@@ -45,7 +45,7 @@ public class HabitDetailTest extends ActivityInstrumentationTestCase2<HabitDetai
     @SuppressWarnings("deprecation")
     public HabitDetailTest() {
 
-    super("com.a_caring_reminder.app", HabitDetailActivity.class);
+    super("com.a_caring_reminder.app", TextDetailActivity.class);
 
 
     }

@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/habit_list"
-        android:name="com.a_caring_reminder.app.TextsFragment"
+        android:name="com.a_caring_reminder.app.texts.TextsFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"

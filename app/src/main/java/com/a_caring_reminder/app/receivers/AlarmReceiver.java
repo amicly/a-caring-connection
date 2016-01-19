@@ -33,7 +33,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         mScheduledAlarmID =  intent.getIntExtra("com.a_caring_reminder.app.alarm_id", 2);
-        //Toast.makeText(context, String.valueOf(intent.getIntExtra(HabitDetailActivity.ALARM_ID, 1)), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, String.valueOf(intent.getIntExtra(TextDetailActivity.ALARM_ID, 1)), Toast.LENGTH_SHORT).show();
 
 
 

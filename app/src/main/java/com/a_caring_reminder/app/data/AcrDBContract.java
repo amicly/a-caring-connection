@@ -15,6 +15,7 @@ public final class AcrDBContract {
         public static final String COLUMN_NAME_HABIT_ID = "habit_id";
         public static final String COLUMN_NAME_MESSAGE_ID = "message_id";
         public static final String COLUMN_NAME_TIME_OF_DAY = "time_of_day";
+        public static final String COLUMN_NAME_TIMESTAMP = "timestamp";
         public static final String COLUMN_NAME_DATE = "date";
 
 

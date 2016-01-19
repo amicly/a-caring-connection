@@ -1,9 +1,12 @@
-package com.a_caring_reminder.app;
+package com.a_caring_reminder.app.textdetail;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.WindowManager;
+
+import com.a_caring_reminder.app.HabitListActivity;
+import com.a_caring_reminder.app.R;
 
 
 /**
@@ -13,9 +16,9 @@ import android.view.WindowManager;
  * in a {@link HabitListActivity}.
  * <p>
  * This activity is mostly just a 'shell' activity containing nothing
- * more than a {@link HabitDetailFragment}.
+ * more than a {@link TextDetailFragment}.
  */
-public class HabitDetailActivity extends ActionBarActivity {
+public class TextDetailActivity extends ActionBarActivity {
 
 
     @Override
@@ -29,9 +32,9 @@ public class HabitDetailActivity extends ActionBarActivity {
 
         Bundle arguments = new Bundle();
 
-        if (getIntent().getStringExtra(HabitDetailFragment.ARG_HABIT_ID) != null) {
+        if (getIntent().getStringExtra(TextDetailFragment.ARG_HABIT_ID) != null) {
 
-            arguments.putString(HabitDetailFragment.ARG_HABIT_ID, getIntent().getStringExtra(HabitDetailFragment.ARG_HABIT_ID));
+            arguments.putString(TextDetailFragment.ARG_HABIT_ID, getIntent().getStringExtra(TextDetailFragment.ARG_HABIT_ID));
 
         }
 
@@ -40,7 +43,7 @@ public class HabitDetailActivity extends ActionBarActivity {
             // using a fragment transaction.
 
 
-            HabitDetailFragment fragment = new HabitDetailFragment();
+            TextDetailFragment fragment = new TextDetailFragment();
             fragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
                     .add(R.id.habit_detail_container, fragment)
@@ -59,6 +62,8 @@ public class HabitDetailActivity extends ActionBarActivity {
         // Inflate the menu items for use in the action bar
         return super.onCreateOptionsMenu(menu);
     }
+
+
 
 
 }

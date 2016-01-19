@@ -1,4 +1,4 @@
-package com.a_caring_reminder.app;
+package com.a_caring_reminder.app.textdetail;
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -25,6 +25,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.a_caring_reminder.app.DatePickerFragment;
+import com.a_caring_reminder.app.FrequencyPickerFragment;
+import com.a_caring_reminder.app.HabitListActivity;
+import com.a_caring_reminder.app.R;
+import com.a_caring_reminder.app.TimePickerFragment;
 import com.a_caring_reminder.app.Util.ReminderUtils;
 import com.a_caring_reminder.app.receivers.AlarmReceiver;
 import com.a_caring_reminder.app.data.AcrDB;
@@ -45,10 +50,10 @@ import java.util.TimeZone;
 /**
  * A fragment representing a single habit detail screen.
  * This fragment is either contained in a {@link HabitListActivity}
- * in two-pane mode (on tablets) or a {@link HabitDetailActivity}
+ * in two-pane mode (on tablets) or a {@link TextDetailActivity}
  * on handsets.
  */
-public class HabitDetailFragment extends Fragment implements View.OnClickListener {
+public class TextDetailFragment extends Fragment implements View.OnClickListener {
 
 
 
@@ -95,7 +100,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public HabitDetailFragment() {
+    public TextDetailFragment() {
     }
 
     @Override
@@ -109,12 +114,12 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
         AcrQuery query = new AcrQuery(acrDB);
 
 
-        if (getArguments().getString(HabitDetailFragment.ARG_HABIT_ID) != null) {
+        if (getArguments().getString(TextDetailFragment.ARG_HABIT_ID) != null) {
 
 
             editMode = false;
             habitMode = "edit";
-            mReminderId = Integer.parseInt(getArguments().getString(HabitDetailFragment.ARG_HABIT_ID));
+            mReminderId = Integer.parseInt(getArguments().getString(TextDetailFragment.ARG_HABIT_ID));
 
 
         }else {
@@ -286,7 +291,7 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
 
             case R.id.habit_details_delete:
 
-                deleteHabit(getArguments().getString(HabitDetailFragment.ARG_HABIT_ID));
+                deleteHabit(getArguments().getString(TextDetailFragment.ARG_HABIT_ID));
 
                 return true;
 
@@ -445,39 +450,10 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
 
     private void saveScheduledAlarms() {
 
-
-        //Remove the currently scheduled Alarms before creating the alarms for the new Habit Details
-
         removeScheduledAlarms(String.valueOf(mReminderId));
-
-
-        //Toast.makeText(getActivity().getApplicationContext(), "Saving Reminders", Toast.LENGTH_SHORT).show();
-
 
         AcrDB acrDB = new AcrDB(getActivity().getApplicationContext());
         AcrQuery query = new AcrQuery(acrDB);
-
-
-        //Get a random Message from the Message Table
-        int supportMessageID = query.getRandomSupportMessageID();
-
-
-        //Add one to the highest current Scheduled Alarm
-        int scheduledAlarmID = (query.getMaxScheduledAlarm() + 1);
-
-        Log.i(TAG, "The max scheduled alarm ID when creating an alarm is " + String.valueOf(scheduledAlarmID));
-
-        //TODO:Write the database values to the database - Should probably be refactored and placed in arcQuery
-
-        SQLiteDatabase db = acrDB.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_ENTRY_ID, scheduledAlarmID);
-        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_PHONE_NUMBER, mContactNumber.getText().toString());
-        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_MESSAGE_ID, mHabitDescription.getText().toString());
-        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_HABIT_ID, mReminderId);
-        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_TIME_OF_DAY, mHabitTime.getText().toString());
-        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_DATE, mHabitDate.getText().toString());
-        db.insert(AcrDBContract.ScheduledAlarmEntry.TABLE_NAME, null, values);
 
         Calendar alarmCalendar = Calendar.getInstance(TimeZone.getDefault(), Locale.getDefault());
 
@@ -497,6 +473,27 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
         }
 
         alarmCalendar.setTime(mStartDate);
+
+        //Get a random Message from the Message Table
+        int supportMessageID = query.getRandomSupportMessageID();
+
+        //Add one to the highest current Scheduled Alarm
+        int scheduledAlarmID = (query.getMaxScheduledAlarm() + 1);
+
+        Log.i(TAG, "The max scheduled alarm ID when creating an alarm is " + String.valueOf(scheduledAlarmID));
+
+        //TODO:Write the database values to the database - Should probably be refactored and placed in arcQuery
+
+        SQLiteDatabase db = acrDB.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_ENTRY_ID, scheduledAlarmID);
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_PHONE_NUMBER, mContactNumber.getText().toString());
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_MESSAGE_ID, mHabitDescription.getText().toString());
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_HABIT_ID, mReminderId);
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_TIME_OF_DAY, mHabitTime.getText().toString());
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_DATE, mHabitDate.getText().toString());
+        values.put(AcrDBContract.ScheduledAlarmEntry.COLUMN_NAME_TIMESTAMP, (int) alarmCalendar.getTimeInMillis());
+        db.insert(AcrDBContract.ScheduledAlarmEntry.TABLE_NAME, null, values);
 
         //Create Alarms in AlarmManager
 
@@ -753,6 +750,12 @@ public class HabitDetailFragment extends Fragment implements View.OnClickListene
 
 
     }
+
+
+
+
+
+
 
 }
 

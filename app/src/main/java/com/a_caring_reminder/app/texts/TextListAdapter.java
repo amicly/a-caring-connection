@@ -71,12 +71,13 @@ public class TextListAdapter extends BaseAdapter {
             if (convertView == null) {
 
                 LayoutInflater inflater = (activity).getLayoutInflater();
-                convertView = inflater.inflate(R.layout.habit_list_row, null);
+                convertView = inflater.inflate(R.layout.list_row_text, null);
 
                 assert convertView != null;
                 holder.txtName = (TextView) convertView.findViewById(R.id.rowTextView);
                 holder.txtTime = (TextView) convertView.findViewById(R.id.rowTimeView);
                 holder.txtMessage = (TextView) convertView.findViewById(R.id.rowMessageTextView);
+                holder.txtDate = (TextView) convertView.findViewById(R.id.rowDateView);
 
                 // holder.txtName.setTextColor(activity.getResources().getColor(R.color.UBJRed));
 
@@ -92,9 +93,10 @@ public class TextListAdapter extends BaseAdapter {
                 String n = "Subject: " + names.get(position).getHabitSubject();
                 String t = "Time: " + names.get(position).getHabitTime();
                 String messageSubject = "Message: " + names.get(position).getHabitMessage();
-                holder.txtName.setText(n);
+                holder.txtName.setText(names.get(0).getContactName());
                 holder.txtTime.setText(t);
                 holder.txtMessage.setText(messageSubject);
+                holder.txtDate.setText(names.get(position).getHabitDate());
 
 
             }
@@ -127,6 +129,7 @@ public class TextListAdapter extends BaseAdapter {
         TextView txtName;
         TextView txtTime;
         TextView txtMessage;
+        TextView txtDate;
 
     }
 

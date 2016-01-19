@@ -87,7 +87,7 @@ public class SupportedDetailFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        HabitDetailActivity mActivityReference = (HabitDetailActivity) getActivity();
+        TextDetailActivity mActivityReference = (TextDetailActivity) getActivity();
 
         mActivityReference.setHabitDetailFields();
 

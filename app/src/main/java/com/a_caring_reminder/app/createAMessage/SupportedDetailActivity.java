@@ -13,7 +13,6 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.a_caring_reminder.app.R;
 import com.a_caring_reminder.app.TodaysActivity;
-import com.a_caring_reminder.app.services.SendMessage;
 
 /**
  * Created by Dan Bryant on 7/31/2014.
@@ -106,9 +105,9 @@ public class SupportedDetailActivity extends Activity {
                 case R.id.habit_details_save:
 
                     //Send the message
-                        SendMessage send = new SendMessage(getString(R.string.postMessage));
-
-                        send.execute(fragment.getMessage());
+//                        SendMessage send = new SendMessage(getString(R.string.postMessage));
+//
+//                        send.execute(fragment.getMessage());
 
                     Intent ActivityIntent = new Intent(this, SupportedListActivity.class);
                     startActivity(ActivityIntent);

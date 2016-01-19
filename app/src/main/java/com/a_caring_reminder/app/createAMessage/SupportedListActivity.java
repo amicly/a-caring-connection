@@ -136,7 +136,7 @@ public class SupportedListActivity extends Activity
                 String one =  mOne.getText().toString();
                 String message = mMessage.getText().toString();
 
-                send.execute(new String[]{one, message});
+//                send.execute(new String[]{one, message});
 
                 mOne.setText("");
                 mMessage.setText("");

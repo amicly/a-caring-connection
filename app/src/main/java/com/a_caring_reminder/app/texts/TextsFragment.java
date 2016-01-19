@@ -1,4 +1,4 @@
-package com.a_caring_reminder.app;
+package com.a_caring_reminder.app.texts;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,9 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.a_caring_reminder.app.textdetail.TextDetailActivity;
+import com.a_caring_reminder.app.textdetail.TextDetailFragment;
+import com.a_caring_reminder.app.R;
 import com.a_caring_reminder.app.data.AcrDB;
 import com.a_caring_reminder.app.data.AcrQuery;
-import com.a_caring_reminder.app.texts.TextListAdapter;
 import com.a_caring_reminder.app.models.Text;
 
 import java.util.List;
@@ -22,7 +24,7 @@ import java.util.List;
  * A list fragment representing a list of habits. This fragment
  * also supports tablet devices by allowing list items to be given an
  * 'activated' state upon selection. This helps indicate which item is
- * currently being viewed in a {@link HabitDetailFragment}.
+ * currently being viewed in a {@link TextDetailFragment}.
  * <p/>
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
@@ -105,7 +107,7 @@ public class TextsFragment extends ListFragment {
             //if (!(ITEMS.get(0).getText().equals("No Items Yet")))
             // {
 
-            ITEMS = query.remindersToList(AcrDB);
+            ITEMS = query.upcomingTextList(AcrDB);
             adapter = new TextListAdapter(
                     getActivity(),
                     ITEMS);
@@ -134,7 +136,7 @@ public class TextsFragment extends ListFragment {
             public void onClick(View v) {
 
                 //Create Blank Detail Intent
-                Intent detailIntent = new Intent(getActivity(), HabitDetailActivity.class);
+                Intent detailIntent = new Intent(getActivity(), TextDetailActivity.class);
                 //Start Detail Activity with Blank Intent
                 startActivity(detailIntent);
             }
@@ -231,7 +233,7 @@ public class TextsFragment extends ListFragment {
         mActivatedPosition = position;
     }
 
-    static TextsFragment newInstance() {
+    public static TextsFragment newInstance() {
         TextsFragment f = new TextsFragment();
         return f;
     }

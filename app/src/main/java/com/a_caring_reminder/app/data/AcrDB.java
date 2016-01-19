@@ -44,9 +44,6 @@ public class AcrDB extends SQLiteOpenHelper {
                     "email    text, " +
                     "message    text)");
 
-
-
-
             db.execSQL("CREATE TABLE Habit " +
                     "(id int, " +
                     "descriptions 	text, " +
@@ -79,7 +76,8 @@ public class AcrDB extends SQLiteOpenHelper {
                     "message text," +
                     "habit_time text," +
                     "habit_date text," +
-                    "frequency text)");
+                    "frequency text," +
+                    "timestamp int)");
 
 
             /* Create Sample Data /*
