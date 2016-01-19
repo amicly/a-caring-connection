@@ -1,4 +1,4 @@
-package com.a_caring_reminder.app.habits;
+package com.a_caring_reminder.app.texts;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.a_caring_reminder.app.HabitListActivity;
 import com.a_caring_reminder.app.R;
 import com.a_caring_reminder.app.data.AcrQuery;
-import com.a_caring_reminder.app.models.Reminder;
+import com.a_caring_reminder.app.models.Text;
 import com.a_caring_reminder.app.models.ScheduleItems;
 
 import java.util.List;
@@ -19,13 +19,13 @@ import java.util.List;
 /**
  * Created by dan on 6/26/14.
  */
-public class HabitListAdapter extends BaseAdapter {
+public class TextListAdapter extends BaseAdapter {
 
     private itemID mCallbacks = sDummyCallbacks;
 
     private int resource;
     private static LayoutInflater inflater=null;
-    private List<Reminder> names;
+    private List<Text> names;
     Activity activity;
     ScheduleItems habits;
     AcrQuery query;
@@ -47,7 +47,7 @@ public class HabitListAdapter extends BaseAdapter {
         }
     };
 
-    public HabitListAdapter(Activity _activity, List<Reminder> _items) {
+    public TextListAdapter(Activity _activity, List<Text> _items) {
 
         try{
 

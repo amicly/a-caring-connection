@@ -3,7 +3,7 @@ package com.a_caring_reminder.app.models;
 /**
  * Created by daz on 3/19/15.
  */
-public class Reminder {
+public class Text {
 
     private int mReminderUniqueId;
     private int mReminderGroupId;
@@ -16,7 +16,7 @@ public class Reminder {
     private String mFrequency;
 
 
-    public Reminder (int reminderUniqueID, int reminderGroupId, String contactName, String contactNumber, String subject, String message, String habitTime, String habitDate, String frequency)
+    public Text(int reminderUniqueID, int reminderGroupId, String contactName, String contactNumber, String subject, String message, String habitTime, String habitDate, String frequency)
     {
 
         this.mReminderUniqueId = reminderUniqueID;

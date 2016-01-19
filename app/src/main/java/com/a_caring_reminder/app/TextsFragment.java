@@ -13,8 +13,8 @@ import android.widget.ListView;
 
 import com.a_caring_reminder.app.data.AcrDB;
 import com.a_caring_reminder.app.data.AcrQuery;
-import com.a_caring_reminder.app.habits.HabitListAdapter;
-import com.a_caring_reminder.app.models.Reminder;
+import com.a_caring_reminder.app.texts.TextListAdapter;
+import com.a_caring_reminder.app.models.Text;
 
 import java.util.List;
 
@@ -27,19 +27,19 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class HabitListFragment extends ListFragment {
+public class TextsFragment extends ListFragment {
 
 
     //SQLite class
     com.a_caring_reminder.app.data.AcrDB AcrDB;
 
     //listItem type in models for listview
-    private List<Reminder> ITEMS;
-    private HabitListAdapter adapter;
+    private List<Text> ITEMS;
+    private TextListAdapter adapter;
     private View rootView;
     private ListView listView;
 
-    private static final String LOG_TAG = HabitListFragment.class.getSimpleName();
+    private static final String LOG_TAG = TextsFragment.class.getSimpleName();
 
 
     /**
@@ -87,7 +87,7 @@ public class HabitListFragment extends ListFragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public HabitListFragment() {
+    public TextsFragment() {
     }
 
     @Override
@@ -106,7 +106,7 @@ public class HabitListFragment extends ListFragment {
             // {
 
             ITEMS = query.remindersToList(AcrDB);
-            adapter = new HabitListAdapter(
+            adapter = new TextListAdapter(
                     getActivity(),
                     ITEMS);
 
@@ -231,8 +231,8 @@ public class HabitListFragment extends ListFragment {
         mActivatedPosition = position;
     }
 
-    static HabitListFragment newInstance() {
-        HabitListFragment f = new HabitListFragment();
+    static TextsFragment newInstance() {
+        TextsFragment f = new TextsFragment();
         return f;
     }
 

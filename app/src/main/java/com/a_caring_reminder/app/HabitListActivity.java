@@ -23,11 +23,11 @@ import android.view.WindowManager;
  * item details side-by-side using two vertical panes.
  * <p>
  * The activity makes heavy use of fragments. The list of items is a
- * {@link HabitListFragment} and the item details
+ * {@link TextsFragment} and the item details
  * (if present) is a {@link HabitDetailFragment}.
  * <p>
  * This activity also implements the required
- * {@link HabitListFragment.Callbacks} interface
+ * {@link TextsFragment.Callbacks} interface
  * to listen for item selections.
  */
 public class HabitListActivity extends FragmentActivity{
@@ -62,7 +62,7 @@ public class HabitListActivity extends FragmentActivity{
     }
 
     /**
-     * Callback method from {@link HabitListFragment.Callbacks}
+     * Callback method from {@link TextsFragment.Callbacks}
      * indicating that the item with the given ID was selected.
      */
 
@@ -148,7 +148,7 @@ public class HabitListActivity extends FragmentActivity{
 
     public static class AcrPagerAdapter extends FragmentPagerAdapter {
 
-        private String tabTitles[] = new String[] { "Next Day", "Scheduled"};
+        private String tabTitles[] = new String[] { "Upcoming Texts", "Past Texts"};
 
         public AcrPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -156,7 +156,7 @@ public class HabitListActivity extends FragmentActivity{
 
 
         public int getCount() {
-            return 1;
+            return 2;
         }
 
         @Override
@@ -165,11 +165,11 @@ public class HabitListActivity extends FragmentActivity{
             int resId = 0;
             switch (position) {
                 case 0:
-                    return HabitListFragment.newInstance();
+                    return TextsFragment.newInstance();
                 case 1:
-                    return HabitListFragment.newInstance();
+                    return TextsFragment.newInstance();
                 case 2:
-                    return HabitListFragment.newInstance();
+                    return TextsFragment.newInstance();
                 default:
                     return null;
 

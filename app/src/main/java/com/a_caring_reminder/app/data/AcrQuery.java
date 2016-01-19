@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.a_caring_reminder.app.models.ReceivedMessage;
-import com.a_caring_reminder.app.models.Reminder;
+import com.a_caring_reminder.app.models.Text;
 import com.a_caring_reminder.app.models.ScheduleItems;
 import com.a_caring_reminder.app.models.ScheduledAlarm;
 import com.a_caring_reminder.app.models.SupportMessage;
@@ -942,13 +942,13 @@ public class AcrQuery {
      * @param acrDB
      * @return List<Reminder>
      */
-    public List<Reminder> remindersToList(AcrDB acrDB){
+    public List<Text> remindersToList(AcrDB acrDB){
 
         Cursor db = acrDB.getReadableDatabase().rawQuery("Select * from Reminder", null);
 
-        List<Reminder> Reminders = new ArrayList<Reminder>();
+        List<Text> texts = new ArrayList<Text>();
 
-        Reminder reminder;
+        Text text;
 
         try{
 
@@ -957,8 +957,8 @@ public class AcrQuery {
 
                 for (int i = 0; i < db.getCount(); i ++){
 
-                    reminder = new Reminder (db.getInt(0), db.getInt(1), db.getString(2), db.getString(3), db.getString(4), db.getString(5), db.getString(6), db.getString(7), db.getString(8));
-                    Reminders.add(reminder);
+                    text = new Text(db.getInt(0), db.getInt(1), db.getString(2), db.getString(3), db.getString(4), db.getString(5), db.getString(6), db.getString(7), db.getString(8));
+                    texts.add(text);
                     db.moveToNext();
 
                 }
@@ -966,16 +966,16 @@ public class AcrQuery {
             }
             else {
 
-                reminder = new Reminder(0, 0, null, null, null, null, null, null, null);
-                Reminders.add(reminder);
+                text = new Text(0, 0, null, null, null, null, null, null, null);
+                texts.add(text);
 
             }
-            return Reminders;
+            return texts;
 
         }
         catch (Exception ex){
             ex.printStackTrace();
-            return Reminders;
+            return texts;
         }
     }
 

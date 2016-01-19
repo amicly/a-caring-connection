@@ -2,7 +2,7 @@
 <resources>
 
     <!-- App strings -->
-    <string name="app_name">A Caring Connection</string>
+    <string name="app_name">A Caring Text</string>
     <string name="title_habit_detail">Enter Habit Details</string>
     <string name="title_save">Save</string>
     <string name="title_cancel">Cancel</string>
