@@ -50,7 +50,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         Log.i("ACR", "Scheduled Alarm ID is "+ String.valueOf(mScheduledAlarmID));
         ScheduledAlarm mScheduledAlarm = query.getScheduledAlarm(String.valueOf(mScheduledAlarmID));
         Log.i("ACR", "The Habit ID for the alarm is  " + String.valueOf(mScheduledAlarm.getHabitID()));
-        //String habitTitle = query.getHabitTime(String.valueOf(mScheduledAlarm.getHabitID())) + " "  + query.getHabitTitle(String.valueOf(mScheduledAlarm.getHabitID()));
+        //String habitTitle = query.getTextTime(String.valueOf(mScheduledAlarm.getHabitID())) + " "  + query.getHabitTitle(String.valueOf(mScheduledAlarm.getHabitID()));
 
         ScheduledAlarm scheduledAlarmObject = query.getScheduledAlarm(String.valueOf(mScheduledAlarmID));
 

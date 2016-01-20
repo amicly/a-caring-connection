@@ -1,22 +1,24 @@
 package com.a_caring_reminder.app.texts;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ListFragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.a_caring_reminder.app.textdetail.TextDetailActivity;
-import com.a_caring_reminder.app.textdetail.TextDetailFragment;
 import com.a_caring_reminder.app.R;
 import com.a_caring_reminder.app.data.AcrDB;
 import com.a_caring_reminder.app.data.AcrQuery;
 import com.a_caring_reminder.app.models.Text;
+import com.a_caring_reminder.app.textdetail.TextDetailActivity;
+import com.a_caring_reminder.app.textdetail.TextDetailFragment;
 
 import java.util.List;
 
@@ -32,49 +34,12 @@ import java.util.List;
 public class TextsFragment extends ListFragment {
 
 
-    //SQLite class
-    com.a_caring_reminder.app.data.AcrDB AcrDB;
-
-    //listItem type in models for listview
-    private List<Text> ITEMS;
-    private TextListAdapter adapter;
-    private View rootView;
-    private ListView listView;
-
     private static final String LOG_TAG = TextsFragment.class.getSimpleName();
-
-
     /**
      * The serialization (saved instance state) Bundle key representing the
      * activated item position. Only used on tablets.
      */
     private static final String STATE_ACTIVATED_POSITION = "activated_position";
-
-
-    /**
-     * The fragment's current callback object, which is notified of list item
-     * clicks.
-     */
-    private Callbacks mCallbacks = sDummyCallbacks;
-
-    /**
-     * The current activated item position. Only used on tablets.
-     */
-    private int mActivatedPosition = ListView.INVALID_POSITION;
-
-    /**
-     * A callback interface that all activities containing this fragment must
-     * implement. This mechanism allows activities to be notified of item
-     * selections.
-     */
-    public interface Callbacks {
-        /**
-         * Callback for when an item has been selected.
-         */
-        public void onItemSelected(String id);
-
-    }
-
     /**
      * A dummy implementation of the {@link Callbacks} interface that does
      * nothing. Used only when this fragment is not attached to an activity.
@@ -84,6 +49,24 @@ public class TextsFragment extends ListFragment {
         public void onItemSelected(String description) {
         }
     };
+    //SQLite class
+    com.a_caring_reminder.app.data.AcrDB AcrDB;
+    //listItem type in models for listview
+    private List<Text> ITEMS;
+    private TextListAdapter adapter;
+    private View rootView;
+    private ListView listView;
+    private RecyclerView mTextRecyclerView;
+    private TextAdapter mAdapter;
+    /**
+     * The fragment's current callback object, which is notified of list item
+     * clicks.
+     */
+    private Callbacks mCallbacks = sDummyCallbacks;
+    /**
+     * The current activated item position. Only used on tablets.
+     */
+    private int mActivatedPosition = ListView.INVALID_POSITION;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -92,43 +75,22 @@ public class TextsFragment extends ListFragment {
     public TextsFragment() {
     }
 
+    public static TextsFragment newInstance() {
+        TextsFragment f = new TextsFragment();
+        return f;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //Create the database here so that it gets the Activity Context.
-        AcrDB = new AcrDB(getActivity());
-        AcrQuery query = new AcrQuery(AcrDB);
-        try {
-            if (ITEMS != null) {
-                ITEMS.clear();
-            }
-
-            //if (!(ITEMS.get(0).getText().equals("No Items Yet")))
-            // {
-
-            ITEMS = query.upcomingTextList(AcrDB);
-            adapter = new TextListAdapter(
-                    getActivity(),
-                    ITEMS);
-
-
-            setListAdapter(adapter);
-
-            //}
-
-
-        } catch (Exception ex) {
-            Log.d("Fill items", ex.getMessage());
-        }
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_habit_list, container, false);
-        ListView list = (ListView) root.findViewById(android.R.id.list);
+
+        mTextRecyclerView = (RecyclerView) root.findViewById(R.id.text_recycler_view);
+        mTextRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         FloatingActionButton fab = (FloatingActionButton) root.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -144,6 +106,8 @@ public class TextsFragment extends ListFragment {
 
         });
 
+        updateUI();
+
         return root;
     }
 
@@ -157,31 +121,6 @@ public class TextsFragment extends ListFragment {
             setActivatedPosition(savedInstanceState.getInt(STATE_ACTIVATED_POSITION));
         }
 
-        /*getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                long s = adapter.getItemId(i);
-                mCallbacks.onItemSelected(String.valueOf(s));
-            }
-        });*/
-
-
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
-        /*
-
-        // Activities containing this fragment must implement its callbacks.
-        if (!(activity instanceof Callbacks)) {
-            throw new IllegalStateException("Activity must implement fragment's callbacks.");
-        }
-
-        mCallbacks = (Callbacks) activity;
-
-        */
     }
 
 
@@ -233,9 +172,71 @@ public class TextsFragment extends ListFragment {
         mActivatedPosition = position;
     }
 
-    public static TextsFragment newInstance() {
-        TextsFragment f = new TextsFragment();
-        return f;
+    /**
+     * A callback interface that all activities containing this fragment must
+     * implement. This mechanism allows activities to be notified of item
+     * selections.
+     */
+    public interface Callbacks {
+        /**
+         * Callback for when an item has been selected.
+         */
+        public void onItemSelected(String id);
+
+    }
+
+    private class TextHolder extends RecyclerView.ViewHolder {
+
+        public TextView textRecipient;
+        public TextView textTime;
+        public TextView textMessage;
+        public TextView textDate;
+
+        public TextHolder(View itemView) {
+            super(itemView);
+            textRecipient = (TextView) itemView.findViewById(R.id.rowTextView);
+            textTime = (TextView) itemView.findViewById(R.id.rowTimeView);
+            textMessage = (TextView) itemView.findViewById(R.id.rowMessageTextView);
+            textDate = (TextView) itemView.findViewById(R.id.rowDateView);
+        }
+
+    }
+
+    private class TextAdapter extends RecyclerView.Adapter<TextHolder> {
+        private List<Text> mTexts;
+
+        public TextAdapter(List<Text> texts) {
+            mTexts = texts;
+        }
+
+        @Override
+        public TextHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
+            View view = layoutInflater.inflate(R.layout.list_row_text, parent, false);
+            return new TextHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(TextHolder holder, int position) {
+            Text text = mTexts.get(position);
+            holder.textRecipient.setText(text.getRecipientName());
+            holder.textTime.setText(text.getTextTime());
+            holder.textMessage.setText(text.getTextMessage());
+            holder.textDate.setText(text.getTextDate());
+        }
+
+        @Override
+        public int getItemCount() {
+            return mTexts.size();
+        }
+    }
+
+    private void updateUI() {
+        AcrDB = new AcrDB(getActivity());
+        AcrQuery query = new AcrQuery(AcrDB);
+        ITEMS = query.upcomingTextList(AcrDB);
+        mAdapter = new TextAdapter(ITEMS);
+        mTextRecyclerView.setAdapter(mAdapter);
     }
 
 

@@ -91,12 +91,12 @@ public class TextListAdapter extends BaseAdapter {
             holder.txtName.setTag(names.get(position).getPosition());
             if (position != -1){
                 String n = "Subject: " + names.get(position).getHabitSubject();
-                String t = "Time: " + names.get(position).getHabitTime();
-                String messageSubject = "Message: " + names.get(position).getHabitMessage();
-                holder.txtName.setText(names.get(0).getContactName());
+                String t = "Time: " + names.get(position).getTextTime();
+                String messageSubject = "Message: " + names.get(position).getTextMessage();
+                holder.txtName.setText(names.get(0).getRecipientName());
                 holder.txtTime.setText(t);
                 holder.txtMessage.setText(messageSubject);
-                holder.txtDate.setText(names.get(position).getHabitDate());
+                holder.txtDate.setText(names.get(position).getTextDate());
 
 
             }

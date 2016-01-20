@@ -35,7 +35,7 @@ public class Text {
         return this.mReminderUniqueId;
     }
 
-    public String getHabitTime() {
+    public String getTextTime() {
 
         return this.mHabitTime;
     }
@@ -45,7 +45,7 @@ public class Text {
         return this.mSubject;
     }
 
-    public String getHabitMessage() {
+    public String getTextMessage() {
 
         return this.mMessage;
     }
@@ -55,11 +55,11 @@ public class Text {
         return this.mReminderUniqueId;
     }
 
-    public String getHabitDate() {
+    public String getTextDate() {
         return mHabitDate;
     }
 
-    public String getContactName() {
+    public String getRecipientName() {
         return mContactName;
     }
 
